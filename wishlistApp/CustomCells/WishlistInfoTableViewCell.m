@@ -20,4 +20,15 @@
     // Configure the view for the selected state
 }
 
+-(void)setItem:(Item *)item {
+    if (item == nil) {
+        return;
+    }
+    _item = item;
+    
+    self.titleLabel.text = self.item.title;
+    self.referenceLabel.text = self.item.reference;
+    self.tagLabel.text = self.item.tag;
+}
+
 @end

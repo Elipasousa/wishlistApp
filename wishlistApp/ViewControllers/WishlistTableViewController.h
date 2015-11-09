@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "WishlistInfoTableViewCell.h"
+#import "BaseViewController.h"
 
-@interface WishlistTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface WishlistTableViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) NSArray *items;
 
 @end
 

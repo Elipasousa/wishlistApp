@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Item.h"
 
 @interface WishlistInfoTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *referenceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tagLabel;
+
+@property (strong, nonatomic) Item *item;
 
 @end

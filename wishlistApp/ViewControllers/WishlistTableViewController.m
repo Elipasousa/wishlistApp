@@ -16,12 +16,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupNavigationBar];
+    [self setupNavigationButton];
     [self registerNibs];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.items = [[Database sharedDatabase] getAllItems];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Setup Methods
+
+-(void)setupNavigationBar {
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+}
+
+-(void)setupNavigationButton {
+    UIBarButtonItem *customButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_add"]
+                                                                     style:UIBarButtonItemStylePlain
+                                                                    target:self
+                                                                    action:@selector(addNewItem)];
+    
+    self.navigationItem.rightBarButtonItem = customButton;
+}
+
+-(void)addNewItem {
+    [self performSegueWithIdentifier:@"addNewItem" sender:self];
 }
 
 #pragma mark - Table View Methods
@@ -36,7 +63,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return [self.items count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -48,6 +75,7 @@
         NSArray * nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier0 owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    cell.item = [self.items objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -57,7 +85,7 @@
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return  44;
+    return  100;
 }
 
 

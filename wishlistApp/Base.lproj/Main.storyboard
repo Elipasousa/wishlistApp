@@ -203,12 +203,15 @@
                                     <constraint firstAttribute="height" constant="50" id="l7k-eI-jMf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="l7k-eI-jMf"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="aSe-k3-5ck" id="tas-Gi-m8H"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GwQ-wW-op3" userLabel="Separator">
                                 <rect key="frame" x="0.0" y="488" width="600" height="1"/>
@@ -291,7 +294,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="IrP-pm-rYj" id="0TM-lH-ii4"/>
                         <outlet property="photoImageView" destination="uQI-bX-Ttc" id="O6h-jR-62x"/>
-                        <outlet property="priceTextField" destination="aw2-nm-KYB" id="hRQ-K6-99Y"/>
+                        <outlet property="priceTextField" destination="aw2-nm-KYB" id="p7T-Lu-WL9"/>
                         <outlet property="referenceTextField" destination="YzC-P9-Y9A" id="1Uq-4d-zeP"/>
                         <outlet property="tagTextField" destination="uoW-iZ-ksv" id="X5h-gY-yuy"/>
                         <outlet property="titleTextField" destination="PwD-HX-IeY" id="4hc-8b-8S3"/>

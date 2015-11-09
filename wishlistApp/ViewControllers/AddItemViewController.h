@@ -10,7 +10,7 @@
 #import "BaseViewController.h"
 #import <UIImage+ResizeMagick.h>
 
-@interface AddItemViewController : BaseViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface AddItemViewController : BaseViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;

@@ -94,5 +94,16 @@
     
     self.photoImageView.image = [image resizedImageByMagick:@"1000x1000"];
 }
+
+#pragma mark - UITextFieldDelegate Methods
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if (textField == self.priceTextField) {
+        if (![textField.text isEqualToString:@""]) {
+            self.priceTextField.text = [NSString stringWithFormat:@"%@ €", self.priceTextField.text];
+        }
+    }
+}
+
         
 @end

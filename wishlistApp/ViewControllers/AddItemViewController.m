@@ -34,7 +34,7 @@
     [dateFormart setDateFormat:@"dd-MM-yyyy"];
     NSString *stringdate = [dateFormart stringFromDate:currentDate];
 
-    self.dateLabel.text = [NSString stringWithFormat:@"Added on %@", stringdate];
+    self.dateLabel.text = [NSString stringWithFormat:@"Adicionado em %@", stringdate];
 }
 
 -(void)setupNavigationBar {

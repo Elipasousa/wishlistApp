@@ -126,7 +126,7 @@
                                     <constraint firstAttribute="height" constant="1" id="KMT-Ra-Tqo"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PwD-HX-IeY">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Descrição" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PwD-HX-IeY">
                                 <rect key="frame" x="10" y="285" width="580" height="50"/>
                                 <animations/>
                                 <constraints>
@@ -152,7 +152,7 @@
                                     <constraint firstAttribute="width" constant="130" id="lkj-8x-fo9"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Reference (optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YzC-P9-Y9A">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Referência (opcional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YzC-P9-Y9A">
                                 <rect key="frame" x="10" y="336" width="580" height="50"/>
                                 <animations/>
                                 <constraints>
@@ -174,7 +174,7 @@
                                     <constraint firstAttribute="height" constant="1" id="apO-ii-QUh"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tag" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uoW-iZ-ksv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Loja" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uoW-iZ-ksv">
                                 <rect key="frame" x="10" y="387" width="580" height="50"/>
                                 <animations/>
                                 <constraints>
@@ -196,7 +196,7 @@
                                     <constraint firstAttribute="height" constant="1" id="vq5-6r-Ztt"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aw2-nm-KYB">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Preço" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aw2-nm-KYB">
                                 <rect key="frame" x="10" y="438" width="580" height="50"/>
                                 <animations/>
                                 <constraints>

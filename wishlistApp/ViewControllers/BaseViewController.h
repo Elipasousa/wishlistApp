@@ -10,6 +10,7 @@
 #import <MBProgressHUD.h>
 #import "Database.h"
 #import "Item.h"
+#import "Constants.h"
 
 @interface BaseViewController : UIViewController
 

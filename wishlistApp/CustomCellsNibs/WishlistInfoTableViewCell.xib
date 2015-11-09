@@ -43,14 +43,14 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URh-Cx-gcN">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URh-Cx-gcN">
                         <rect key="frame" x="100" y="72" width="41" height="20"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zara" translatesAutoresizingMaskIntoConstraints="NO" id="uRy-ZE-DEV">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uRy-ZE-DEV">
                         <rect key="frame" x="100" y="72" width="60" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="BD6-do-aDJ"/>
@@ -98,13 +98,11 @@
                 <outlet property="photoImageView" destination="uNe-Oz-DR4" id="2m5-Ca-Se9"/>
                 <outlet property="priceLabel" destination="djH-Vl-seK" id="EV4-WR-mJt"/>
                 <outlet property="referenceLabel" destination="3IT-xc-ifF" id="dev-q1-w9N"/>
+                <outlet property="tagImageView" destination="uRy-ZE-DEV" id="vES-Ma-ZQP"/>
                 <outlet property="tagLabel" destination="URh-Cx-gcN" id="Zf2-j3-8zu"/>
                 <outlet property="titleLabel" destination="pPU-1f-eyP" id="7LM-H1-Wpa"/>
             </connections>
             <point key="canvasLocation" x="522" y="500"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="zara" width="258" height="60"/>
-    </resources>
 </document>

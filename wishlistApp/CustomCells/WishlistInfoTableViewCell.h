@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Item.h"
+#import "Constants.h"
 
 @interface WishlistInfoTableViewCell : UITableViewCell
 
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *referenceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tagLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *tagImageView;
 
 @property (strong, nonatomic) Item *item;
 

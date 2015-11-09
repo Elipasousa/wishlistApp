@@ -187,6 +187,9 @@
                                         <exclude reference="pYT-q5-K1e"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="aSe-k3-5ck" id="XaG-r6-NCn"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPG-En-RVn" userLabel="Separator">
                                 <rect key="frame" x="0.0" y="437" width="600" height="1"/>

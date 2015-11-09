@@ -47,6 +47,7 @@
 		C2E423B31BF0C76E00DE2D8C /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
 		C2E423B41BF0C76E00DE2D8C /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
 		D2AB2443AFF816E38A404AC3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D7799A021BF14D8600456EC1 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +108,7 @@
 				C2E423891BF0B3F600DE2D8C /* AppDelegate.h */,
 				C2E4238A1BF0B3F600DE2D8C /* AppDelegate.m */,
 				C2E4238F1BF0B3F600DE2D8C /* Main.storyboard */,
+				D7799A021BF14D8600456EC1 /* Constants.h */,
 				C2E423921BF0B3F600DE2D8C /* Assets.xcassets */,
 				C2E423941BF0B3F600DE2D8C /* LaunchScreen.storyboard */,
 				C2E423971BF0B3F600DE2D8C /* Info.plist */,

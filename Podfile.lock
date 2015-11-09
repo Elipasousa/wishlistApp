@@ -1,4 +1,5 @@
 PODS:
+  - ActionSheetPicker-3.0 (2.0.3)
   - FMDB (2.5):
     - FMDB/standard (= 2.5)
   - FMDB/common (2.5)
@@ -9,12 +10,14 @@ PODS:
   - UIImage-ResizeMagick (0.0.1)
 
 DEPENDENCIES:
+  - ActionSheetPicker-3.0
   - FMDB
   - IQKeyboardManager (~> 3.2)
   - MBProgressHUD
   - UIImage-ResizeMagick (~> 0.0.1)
 
 SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: 11f2053085d3088dc1ef9d38a9f11c18b528dd9e
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
   IQKeyboardManager: ac803e61e5b50efae6b3aeedd95a02c7c7d3b2b3
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad

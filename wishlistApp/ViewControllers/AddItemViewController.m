@@ -105,5 +105,23 @@
     }
 }
 
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+    if (textField == self.tagTextField) {
+        [ActionSheetStringPicker showPickerWithTitle:@"Select a brand"
+                                                rows:BRAND_NAMES
+                                    initialSelection:0
+                                           doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                               NSLog(@"%@", selectedValue);
+                                               self.tagTextField.text = selectedValue;
+                                               [textField resignFirstResponder];
+                                           }
+                                         cancelBlock:^(ActionSheetStringPicker *picker) {
+                                             NSLog(@"Block Picker Canceled");
+                                             [textField resignFirstResponder];
+                                         }
+                                              origin:self.view];
+    }
+}
+
         
 @end

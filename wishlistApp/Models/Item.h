@@ -15,7 +15,8 @@
 @property (strong, nonatomic) NSString *tag;
 @property (strong, nonatomic) NSString *price;
 @property (strong, nonatomic) NSString *addedOn;
+@property (strong, nonatomic) NSString *photo;
 
--(id)initWithTitle:(NSString *)title reference:(NSString *)reference tag:(NSString *)tag price:(NSString *)price addedOn:(NSString *)addedOn;
+-(id)initWithTitle:(NSString *)title reference:(NSString *)reference tag:(NSString *)tag price:(NSString *)price addedOn:(NSString *)addedOn photo:(NSString *)photo;
 
 @end

@@ -52,7 +52,9 @@
 
 -(void)doneAddingItem {
     if ([self validaFields]) {
-        [[Database sharedDatabase] addItemWithTitle:self.titleTextField.text reference:self.referenceTextField.text tag:self.tagTextField.text price:self.priceTextField.text addedOn:@"123"];
+        NSString *stringFromPhoto = [UIImagePNGRepresentation(self.photoImageView.image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+
+        [[Database sharedDatabase] addItemWithTitle:self.titleTextField.text reference:self.referenceTextField.text tag:self.tagTextField.text price:self.priceTextField.text addedOn:@"123" photo:stringFromPhoto];
         [self.navigationController popViewControllerAnimated:YES];
     } else {
         [self showConfirmDialogWithTitle:@"Atention" andMessage:@"Please insert all information"];
@@ -60,9 +62,10 @@
 }
 
 -(BOOL)validaFields {
-    return  ![self.titleTextField.text isEqualToString:@""] &&
+    /*return  ![self.titleTextField.text isEqualToString:@""] &&
             ![self.tagTextField.text isEqualToString:@""] &&
-            ![self.priceTextField.text isEqualToString:@""];
+            ![self.priceTextField.text isEqualToString:@""];*/
+    return  YES;
 }
 
 #pragma mark - Actions Methods

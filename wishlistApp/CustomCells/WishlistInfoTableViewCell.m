@@ -29,6 +29,9 @@
     self.titleLabel.text = self.item.title;
     self.referenceLabel.text = self.item.reference;
     self.tagLabel.text = self.item.tag;
+
+    NSData *data = [[NSData alloc]initWithBase64EncodedString:self.item.photo options:NSDataBase64DecodingIgnoreUnknownCharacters];    
+    self.photoImageView.image =[UIImage imageWithData:data];
 }
 
 @end

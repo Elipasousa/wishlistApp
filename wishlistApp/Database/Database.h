@@ -17,7 +17,7 @@
 
 +(id)sharedDatabase;
 
--(BOOL)addItemWithTitle:(NSString *)item_title reference:(NSString *)item_reference tag:(NSString *)item_tag price:(NSString *)item_price addedOn:(NSString *)item_addedOn;
+-(BOOL)addItemWithTitle:(NSString *)item_title reference:(NSString *)item_reference tag:(NSString *)item_tag price:(NSString *)item_price addedOn:(NSString *)item_addedOn photo:(NSString *)item_photo;
 -(NSArray *)getAllAddedItems;
 -(NSArray*)getItemsWithTitle:(NSString *)item_title;
 -(NSArray*)getItemsWithReference:(NSString *)item_reference;

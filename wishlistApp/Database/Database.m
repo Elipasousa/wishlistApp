@@ -44,13 +44,13 @@
 }
 
 -(void)createTables {
-    [self.db executeUpdate:@"CREATE TABLE Items(item_id INTEGER PRIMARY KEY AUTOINCREMENT, item_title TEXT, item_reference TEXT, item_tag TEXT, item_price TEXT, item_addedOn TEXT);"];
+    [self.db executeUpdate:@"CREATE TABLE Items(item_id INTEGER PRIMARY KEY AUTOINCREMENT, item_title TEXT, item_reference TEXT, item_tag TEXT, item_price TEXT, item_addedOn TEXT, item_photo TEXT);"];
 
     //NSLog(@"Error creating tables %d: %@", [self.db lastErrorCode], [self.db lastErrorMessage]);
 }
 
--(BOOL)addItemWithTitle:(NSString *)item_title reference:(NSString *)item_reference tag:(NSString *)item_tag price:(NSString *)item_price addedOn:(NSString *)item_addedOn {
-    BOOL success = [self.db executeUpdate:[NSString stringWithFormat:@"INSERT INTO Items(item_title, item_reference, item_tag, item_price, item_addedOn) VALUES('%@', '%@', '%@', '%@', '%@');", item_title, item_reference, item_tag, item_price, item_addedOn]];
+-(BOOL)addItemWithTitle:(NSString *)item_title reference:(NSString *)item_reference tag:(NSString *)item_tag price:(NSString *)item_price addedOn:(NSString *)item_addedOn photo:(NSString *)item_photo {
+    BOOL success = [self.db executeUpdate:[NSString stringWithFormat:@"INSERT INTO Items(item_title, item_reference, item_tag, item_price, item_addedOn, item_photo) VALUES('%@', '%@', '%@', '%@', '%@', '%@');", item_title, item_reference, item_tag, item_price, item_addedOn, item_photo]];
     
     if (!success) {
         NSLog(@"Error %d: %@", [self.db lastErrorCode], [self.db lastErrorMessage]);
@@ -69,6 +69,7 @@
         i.tag = [s stringForColumn:@"item_tag"];
         i.price = [s stringForColumn:@"item_price"];
         i.addedOn = [s stringForColumn:@"item_addedOn"];
+        i.photo = [s stringForColumn:@"item_photo"];
         [items addObject:i];
     }
     return items;

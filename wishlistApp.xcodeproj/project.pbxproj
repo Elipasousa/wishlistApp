@@ -13,7 +13,9 @@
 		C2E423911BF0B3F600DE2D8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E4238F1BF0B3F600DE2D8C /* Main.storyboard */; };
 		C2E423931BF0B3F600DE2D8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2E423921BF0B3F600DE2D8C /* Assets.xcassets */; };
 		C2E423961BF0B3F600DE2D8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E423941BF0B3F600DE2D8C /* LaunchScreen.storyboard */; };
-		C2E423A21BF0B49600DE2D8C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E423A11BF0B49600DE2D8C /* ViewController.m */; };
+		C2E423A21BF0B49600DE2D8C /* WishlistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E423A11BF0B49600DE2D8C /* WishlistTableViewController.m */; };
+		C2E423A41BF0B6F200DE2D8C /* WishlistInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E423A31BF0B6F200DE2D8C /* WishlistInfoTableViewCell.xib */; };
+		C2E423A71BF0B6FD00DE2D8C /* WishlistInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E423A61BF0B6FD00DE2D8C /* WishlistInfoTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +29,11 @@
 		C2E423921BF0B3F600DE2D8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2E423951BF0B3F600DE2D8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2E423971BF0B3F600DE2D8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2E423A01BF0B49600DE2D8C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C2E423A11BF0B49600DE2D8C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C2E423A01BF0B49600DE2D8C /* WishlistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishlistTableViewController.h; sourceTree = "<group>"; };
+		C2E423A11BF0B49600DE2D8C /* WishlistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishlistTableViewController.m; sourceTree = "<group>"; };
+		C2E423A31BF0B6F200DE2D8C /* WishlistInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WishlistInfoTableViewCell.xib; sourceTree = "<group>"; };
+		C2E423A51BF0B6FD00DE2D8C /* WishlistInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishlistInfoTableViewCell.h; sourceTree = "<group>"; };
+		C2E423A61BF0B6FD00DE2D8C /* WishlistInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishlistInfoTableViewCell.m; sourceTree = "<group>"; };
 		D2AB2443AFF816E38A404AC3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,8 +112,8 @@
 		C2E4239D1BF0B46000DE2D8C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C2E423A01BF0B49600DE2D8C /* ViewController.h */,
-				C2E423A11BF0B49600DE2D8C /* ViewController.m */,
+				C2E423A01BF0B49600DE2D8C /* WishlistTableViewController.h */,
+				C2E423A11BF0B49600DE2D8C /* WishlistTableViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 		C2E4239E1BF0B46B00DE2D8C /* CustomCellsNibs */ = {
 			isa = PBXGroup;
 			children = (
+				C2E423A31BF0B6F200DE2D8C /* WishlistInfoTableViewCell.xib */,
 			);
 			path = CustomCellsNibs;
 			sourceTree = "<group>";
@@ -123,6 +129,8 @@
 		C2E4239F1BF0B47300DE2D8C /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				C2E423A51BF0B6FD00DE2D8C /* WishlistInfoTableViewCell.h */,
+				C2E423A61BF0B6FD00DE2D8C /* WishlistInfoTableViewCell.m */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -186,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2E423A41BF0B6F200DE2D8C /* WishlistInfoTableViewCell.xib in Resources */,
 				C2E423961BF0B3F600DE2D8C /* LaunchScreen.storyboard in Resources */,
 				C2E423931BF0B3F600DE2D8C /* Assets.xcassets in Resources */,
 				C2E423911BF0B3F600DE2D8C /* Main.storyboard in Resources */,
@@ -232,7 +241,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2E423A21BF0B49600DE2D8C /* ViewController.m in Sources */,
+				C2E423A71BF0B6FD00DE2D8C /* WishlistInfoTableViewCell.m in Sources */,
+				C2E423A21BF0B49600DE2D8C /* WishlistTableViewController.m in Sources */,
 				C2E4238B1BF0B3F600DE2D8C /* AppDelegate.m in Sources */,
 				C2E423881BF0B3F600DE2D8C /* main.m in Sources */,
 			);
@@ -348,6 +358,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = wishlistApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Elisabete-Bicho.wishlistApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -360,6 +371,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = wishlistApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Elisabete-Bicho.wishlistApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";

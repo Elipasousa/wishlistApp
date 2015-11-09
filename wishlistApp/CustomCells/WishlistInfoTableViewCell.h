@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WishlistInfoTableViewCell.h
 //  wishlistApp
 //
 //  Created by Elisabete Sousa on 09/11/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface WishlistInfoTableViewCell : UITableViewCell
 
 @end
-

@@ -8,13 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import <UIImage+ResizeMagick.h>
 
-@interface AddItemViewController : BaseViewController
+@interface AddItemViewController : BaseViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *referenceTextField;
 @property (weak, nonatomic) IBOutlet UITextField *tagTextField;
 @property (weak, nonatomic) IBOutlet UITextField *priceTextField;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+- (IBAction)cameraTouched:(id)sender;
+- (IBAction)galleryTouched:(id)sender;
 
 @end

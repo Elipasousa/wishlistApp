@@ -10,10 +10,12 @@
 
 @interface Item : NSObject
 
-@property (weak, nonatomic) NSString *title;
-@property (weak, nonatomic) NSString *reference;
-@property (weak, nonatomic) NSString *tag;
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *reference;
+@property (strong, nonatomic) NSString *tag;
+@property (strong, nonatomic) NSString *price;
+@property (strong, nonatomic) NSString *addedOn;
 
--(id)initWithTitle:(NSString *)title reference:(NSString *)reference andTag:(NSString *)tag;
+-(id)initWithTitle:(NSString *)title reference:(NSString *)reference tag:(NSString *)tag price:(NSString *)price addedOn:(NSString *)addedOn;
 
 @end

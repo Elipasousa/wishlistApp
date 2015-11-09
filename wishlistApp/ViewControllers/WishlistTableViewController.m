@@ -23,7 +23,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.items = [[Database sharedDatabase] getAllItems];
+    self.items = [[Database sharedDatabase] getAllAddedItems];
     [self.tableView reloadData];
 }
 
@@ -39,16 +39,27 @@
 }
 
 -(void)setupNavigationButton {
-    UIBarButtonItem *customButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_add"]
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_add"]
                                                                      style:UIBarButtonItemStylePlain
                                                                     target:self
                                                                     action:@selector(addNewItem)];
     
-    self.navigationItem.rightBarButtonItem = customButton;
+    /*UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_search"]
+                                                                  style:UIBarButtonItemStylePlain
+                                                                 target:self
+                                                                 action:@selector(searchItem)];
+    
+    
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:addButton, searchButton, nil]];*/
+    self.navigationItem.rightBarButtonItem = addButton;
+
 }
 
 -(void)addNewItem {
     [self performSegueWithIdentifier:@"addNewItem" sender:self];
+}
+
+-(void)searchItem {
 }
 
 #pragma mark - Table View Methods
@@ -81,7 +92,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

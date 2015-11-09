@@ -18,6 +18,7 @@
     [super viewDidLoad];
     [self setupNavigationBar];
     [self setupNavigationButton];
+    [self setupDate];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,6 +27,15 @@
 }
 
 #pragma mark - Setup Methods
+
+-(void)setupDate {
+    NSDate *currentDate = [NSDate date];
+    NSDateFormatter * dateFormart = [[NSDateFormatter alloc] init];
+    [dateFormart setDateFormat:@"dd-MM-yyyy"];
+    NSString *stringdate = [dateFormart stringFromDate:currentDate];
+
+    self.dateLabel.text = [NSString stringWithFormat:@"Added on %@", stringdate];
+}
 
 -(void)setupNavigationBar {
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
@@ -41,9 +51,45 @@
 }
 
 -(void)doneAddingItem {
-    //validate fields
-    [[Database sharedDatabase] addItemWithTitle:self.titleTextField.text reference:self.referenceTextField.text andTag:self.tagTextField.text];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if ([self validaFields]) {
+        [[Database sharedDatabase] addItemWithTitle:self.titleTextField.text reference:self.referenceTextField.text tag:self.tagTextField.text price:self.priceTextField.text addedOn:@"123"];
+        [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        [self showConfirmDialogWithTitle:@"Atention" andMessage:@"Please insert all information"];
+    }
 }
 
+-(BOOL)validaFields {
+    return  ![self.titleTextField.text isEqualToString:@""] &&
+            ![self.tagTextField.text isEqualToString:@""] &&
+            ![self.priceTextField.text isEqualToString:@""];
+}
+
+#pragma mark - Actions Methods
+
+- (IBAction)cameraTouched:(id)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    picker.allowsEditing = NO;
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+- (IBAction)galleryTouched:(id)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.allowsEditing = NO;
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+#pragma mark - UIImagePickerControllerDelegate Methods
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    self.photoImageView.image = [image resizedImageByMagick:@"1000x1000"];
+}
+        
 @end

@@ -6,15 +6,18 @@ PODS:
     - FMDB/common
   - IQKeyboardManager (3.3.4)
   - MBProgressHUD (0.9.1)
+  - UIImage-ResizeMagick (0.0.1)
 
 DEPENDENCIES:
   - FMDB
   - IQKeyboardManager (~> 3.2)
   - MBProgressHUD
+  - UIImage-ResizeMagick (~> 0.0.1)
 
 SPEC CHECKSUMS:
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
   IQKeyboardManager: ac803e61e5b50efae6b3aeedd95a02c7c7d3b2b3
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  UIImage-ResizeMagick: f08c2d14d1e8a5f0b402185408785540562f2fe7
 
 COCOAPODS: 0.38.2

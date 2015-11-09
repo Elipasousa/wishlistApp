@@ -10,10 +10,12 @@
 
 @implementation Item
 
--(id)initWithTitle:(NSString *)title reference:(NSString *)reference andTag:(NSString *)tag {
+-(id)initWithTitle:(NSString *)title reference:(NSString *)reference tag:(NSString *)tag price:(NSString *)price addedOn:(NSString *)addedOn {
     _title = title;
     _reference = reference;
     _tag = tag;
+    _price = price;
+    _addedOn = addedOn;
 
     return self;
 }

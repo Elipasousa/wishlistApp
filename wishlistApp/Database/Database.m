@@ -25,7 +25,7 @@
 -(id)init {
     if (self = [super init]) {
         NSURL *documentsDirectoryPath = [NSURL fileURLWithPath:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]];
-        NSString *path = [[documentsDirectoryPath URLByAppendingPathComponent:@"SOCIAL_PIC_DB"] path];
+        NSString *path = [[documentsDirectoryPath URLByAppendingPathComponent:@"WISHLIST_DB"] path];
         self.db = [FMDatabase databaseWithPath:path];
         
         NSLog(@"Connecting to local database at %@", path);
@@ -44,13 +44,13 @@
 }
 
 -(void)createTables {
-    [self.db executeUpdate:@"CREATE TABLE Items(item_title TEXT PRIMARY KEY, item_reference TEXT, item_tag TEXT);"];
+    [self.db executeUpdate:@"CREATE TABLE Items(item_id INTEGER PRIMARY KEY AUTOINCREMENT, item_title TEXT, item_reference TEXT, item_tag TEXT, item_price TEXT, item_addedOn TEXT);"];
 
     //NSLog(@"Error creating tables %d: %@", [self.db lastErrorCode], [self.db lastErrorMessage]);
 }
 
--(BOOL)addItemWithTitle:(NSString *)item_title reference:(NSString *)item_reference andTag:(NSString *)item_tag {
-    BOOL success = [self.db executeUpdate:[NSString stringWithFormat:@"INSERT INTO Items(item_title, item_reference, item_tag) VALUES('%@', '%@', '%@');", item_title, item_reference, item_tag]];
+-(BOOL)addItemWithTitle:(NSString *)item_title reference:(NSString *)item_reference tag:(NSString *)item_tag price:(NSString *)item_price addedOn:(NSString *)item_addedOn {
+    BOOL success = [self.db executeUpdate:[NSString stringWithFormat:@"INSERT INTO Items(item_title, item_reference, item_tag, item_price, item_addedOn) VALUES('%@', '%@', '%@', '%@', '%@');", item_title, item_reference, item_tag, item_price, item_addedOn]];
     
     if (!success) {
         NSLog(@"Error %d: %@", [self.db lastErrorCode], [self.db lastErrorMessage]);
@@ -58,21 +58,23 @@
     return success;
 }
 
--(NSArray*)getAllItems {
+-(NSArray *)getAllAddedItems {
     FMResultSet *s = [self.db executeQuery:[NSString stringWithFormat:@"SELECT * FROM Items;"]];
     NSMutableArray *items = [[NSMutableArray alloc] init];
-    
+
     while ([s next]) {
         Item *i = [[Item alloc] init];
         i.title = [s stringForColumn:@"item_title"];
         i.reference = [s stringForColumn:@"item_reference"];
         i.tag = [s stringForColumn:@"item_tag"];
+        i.price = [s stringForColumn:@"item_price"];
+        i.addedOn = [s stringForColumn:@"item_addedOn"];
         [items addObject:i];
     }
     return items;
 }
 
--(NSArray*)getItemsWithTitle:(NSString *)item_title {
+-(NSArray *)getItemsWithTitle:(NSString *)item_title {
     FMResultSet *s = [self.db executeQuery:[NSString stringWithFormat:@"SELECT * FROM Items WHERE item_title='%@';", item_title]];
     NSMutableArray *items = [[NSMutableArray alloc] init];
     
@@ -81,12 +83,14 @@
         i.title = [s stringForColumn:@"item_title"];
         i.reference = [s stringForColumn:@"item_reference"];
         i.tag = [s stringForColumn:@"item_tag"];
+        i.price = [s stringForColumn:@"item_price"];
+        i.addedOn = [s stringForColumn:@"item_addedOn"];
         [items addObject:i];
     }
     return items;
 }
 
--(NSArray*)getItemsWithReference:(NSString *)item_reference {
+-(NSArray *)getItemsWithReference:(NSString *)item_reference {
     FMResultSet *s = [self.db executeQuery:[NSString stringWithFormat:@"SELECT * FROM Items WHERE item_reference='%@';", item_reference]];
     NSMutableArray *items = [[NSMutableArray alloc] init];
     
@@ -95,12 +99,14 @@
         i.title = [s stringForColumn:@"item_title"];
         i.reference = [s stringForColumn:@"item_reference"];
         i.tag = [s stringForColumn:@"item_tag"];
+        i.price = [s stringForColumn:@"item_price"];
+        i.addedOn = [s stringForColumn:@"item_addedOn"];
         [items addObject:i];
     }
     return items;
 }
 
--(NSArray*)getItemsWithTag:(NSString *)item_tag {
+-(NSArray *)getItemsWithTag:(NSString *)item_tag {
     FMResultSet *s = [self.db executeQuery:[NSString stringWithFormat:@"SELECT * FROM Items WHERE item_tag='%@';", item_tag]];
     NSMutableArray *items = [[NSMutableArray alloc] init];
     
@@ -110,6 +116,8 @@
         i.reference = [s stringForColumn:@"item_reference"];
         i.tag = [s stringForColumn:@"item_tag"];
         [items addObject:i];
+        i.price = [s stringForColumn:@"item_price"];
+        i.addedOn = [s stringForColumn:@"item_addedOn"];
     }
     return items;
 }

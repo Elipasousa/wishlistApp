@@ -54,8 +54,6 @@
     float total_price = 0.0;
     for (Item *i in self.items) {
         NSString *value = [i.price stringByReplacingOccurrencesOfString:@"," withString:@"."];
-        NSLog(@"%f ", total_price);
-
         total_price += [value floatValue];
     }
     self.totalPriceLabel.text = [NSString stringWithFormat:@"%.02f €", total_price];

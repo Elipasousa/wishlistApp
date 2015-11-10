@@ -117,6 +117,10 @@
     [self presentViewController:picker animated:YES completion:nil];
 }
 
+- (IBAction)barcodeReaderTouched:(id)sender {
+    NSLog(@"Barcode reader");
+}
+
 #pragma mark - UIImagePickerControllerDelegate Methods
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {

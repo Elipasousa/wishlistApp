@@ -322,6 +322,19 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCi-rj-aG6">
+                                <rect key="frame" x="550" y="346" width="30" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="M9s-xa-5EG"/>
+                                    <constraint firstAttribute="height" constant="30" id="ohh-Ib-0je"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="barcode"/>
+                                <connections>
+                                    <action selector="barcodeReaderTouched:" destination="aSe-k3-5ck" eventType="touchUpInside" id="V5Q-xU-dvh"/>
+                                    <segue destination="T0h-tY-E7a" kind="show" id="kga-JC-9Pl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -340,6 +353,7 @@
                             <constraint firstItem="GwQ-wW-op3" firstAttribute="top" secondItem="aw2-nm-KYB" secondAttribute="bottom" id="7EZ-nl-x4M"/>
                             <constraint firstItem="aw2-nm-KYB" firstAttribute="height" secondItem="uoW-iZ-ksv" secondAttribute="height" id="9Kp-tc-Av2"/>
                             <constraint firstItem="XVV-Ee-c7q" firstAttribute="trailing" secondItem="gUb-eu-KZ4" secondAttribute="trailing" id="ABm-nd-cVp"/>
+                            <constraint firstItem="UCi-rj-aG6" firstAttribute="centerY" secondItem="YzC-P9-Y9A" secondAttribute="centerY" id="ApG-EG-mLn"/>
                             <constraint firstItem="M68-C3-euh" firstAttribute="top" secondItem="YzC-P9-Y9A" secondAttribute="bottom" id="BRC-Bk-piU"/>
                             <constraint firstItem="fw6-ni-unT" firstAttribute="width" secondItem="cxV-BD-yW5" secondAttribute="width" id="EMM-NL-Wvr"/>
                             <constraint firstItem="GwQ-wW-op3" firstAttribute="leading" secondItem="cPG-En-RVn" secondAttribute="leading" id="HBU-4r-qZm"/>
@@ -362,6 +376,7 @@
                             <constraint firstItem="GwQ-wW-op3" firstAttribute="height" secondItem="cPG-En-RVn" secondAttribute="height" id="Zhc-ts-mvs"/>
                             <constraint firstItem="uoW-iZ-ksv" firstAttribute="height" secondItem="YzC-P9-Y9A" secondAttribute="height" id="Zj5-j8-1tx"/>
                             <constraint firstItem="PwD-HX-IeY" firstAttribute="top" secondItem="gUb-eu-KZ4" secondAttribute="bottom" id="acE-5A-LGC"/>
+                            <constraint firstAttribute="trailing" secondItem="UCi-rj-aG6" secondAttribute="trailing" constant="20" id="fbQ-qP-BZm"/>
                             <constraint firstItem="aw2-nm-KYB" firstAttribute="top" secondItem="cPG-En-RVn" secondAttribute="bottom" id="kmX-zH-4px"/>
                             <constraint firstItem="cPG-En-RVn" firstAttribute="leading" secondItem="M68-C3-euh" secondAttribute="leading" id="lbO-r8-oZE"/>
                             <constraint firstItem="gUb-eu-KZ4" firstAttribute="top" secondItem="fw6-ni-unT" secondAttribute="bottom" constant="20" id="op9-OX-n3K"/>
@@ -397,6 +412,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Dv-Vn-UWI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2235" y="1105"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5xN-Um-jxV">
+            <objects>
+                <viewController id="T0h-tY-E7a" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c53-iV-M5h"/>
+                        <viewControllerLayoutGuide type="bottom" id="uZI-2Y-egN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XZv-rn-0tb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6mW-Oj-Ijn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3037" y="1105"/>
         </scene>
         <!--Item Details View Controller-->
         <scene sceneID="MQQ-7V-rZg">
@@ -500,6 +534,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="barcode" width="128" height="128"/>
         <image name="ic_camera" width="24" height="24"/>
         <image name="ic_clear" width="24" height="24"/>
         <image name="ic_gallery" width="24" height="24"/>

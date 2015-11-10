@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 - (IBAction)cameraTouched:(id)sender;
 - (IBAction)galleryTouched:(id)sender;
+- (IBAction)barcodeReaderTouched:(id)sender;
 
 @property (strong, nonatomic) Item *item;
 

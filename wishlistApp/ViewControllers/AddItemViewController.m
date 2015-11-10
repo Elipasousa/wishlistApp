@@ -117,8 +117,14 @@
     [self presentViewController:picker animated:YES completion:nil];
 }
 
-- (IBAction)barcodeReaderTouched:(id)sender {
-    NSLog(@"Barcode reader");
+- (IBAction)barcodeReaderTouched:(id)sender {    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    BarCodeReaderViewController *target =  (BarCodeReaderViewController*)[storyboard instantiateViewControllerWithIdentifier:@"BarCodeReaderViewController"];
+    target.codeReadBlock = ^(NSString *code) {
+        self.referenceTextField.text = code;
+        [self.referenceTextField resignFirstResponder];
+    };
+    [self.navigationController pushViewController:target animated:YES];
 }
 
 #pragma mark - UIImagePickerControllerDelegate Methods

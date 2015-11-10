@@ -323,16 +323,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCi-rj-aG6">
-                                <rect key="frame" x="550" y="346" width="30" height="30"/>
+                                <rect key="frame" x="540" y="344" width="40" height="35"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="M9s-xa-5EG"/>
-                                    <constraint firstAttribute="height" constant="30" id="ohh-Ib-0je"/>
+                                    <constraint firstAttribute="width" constant="40" id="M9s-xa-5EG"/>
+                                    <constraint firstAttribute="height" constant="35" id="ohh-Ib-0je"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="barcode"/>
                                 <connections>
                                     <action selector="barcodeReaderTouched:" destination="aSe-k3-5ck" eventType="touchUpInside" id="V5Q-xU-dvh"/>
-                                    <segue destination="T0h-tY-E7a" kind="show" id="kga-JC-9Pl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -413,24 +412,51 @@
             </objects>
             <point key="canvasLocation" x="2235" y="1105"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="5xN-Um-jxV">
+        <!--Bar Code Reader View Controller-->
+        <scene sceneID="nOC-SZ-euT">
             <objects>
-                <viewController id="T0h-tY-E7a" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BarCodeReaderViewController" id="a1J-Ig-vUl" customClass="BarCodeReaderViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="c53-iV-M5h"/>
-                        <viewControllerLayoutGuide type="bottom" id="uZI-2Y-egN"/>
+                        <viewControllerLayoutGuide type="top" id="vEF-am-7Zz"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Ys-QW-5pN"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="XZv-rn-0tb">
+                    <view key="view" contentMode="scaleToFill" id="IHq-D4-Ar3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZqI-d7-ca8">
+                                <rect key="frame" x="0.0" y="180" width="600" height="200"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="oj7-DR-VbC"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leia o código de barras da referência" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CD-4w-ljj">
+                                <rect key="frame" x="166" y="40" width="269" height="18"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6CD-4w-ljj" firstAttribute="top" secondItem="vEF-am-7Zz" secondAttribute="bottom" constant="20" id="9Ec-Ht-Mlm"/>
+                            <constraint firstItem="ZqI-d7-ca8" firstAttribute="centerY" secondItem="IHq-D4-Ar3" secondAttribute="centerY" constant="-20" id="Fb2-Gp-HZd"/>
+                            <constraint firstItem="6CD-4w-ljj" firstAttribute="centerX" secondItem="IHq-D4-Ar3" secondAttribute="centerX" id="VtQ-Og-xQg"/>
+                            <constraint firstAttribute="trailing" secondItem="ZqI-d7-ca8" secondAttribute="trailing" id="iFD-FT-iH3"/>
+                            <constraint firstItem="ZqI-d7-ca8" firstAttribute="leading" secondItem="IHq-D4-Ar3" secondAttribute="leading" id="x06-hj-pBE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="previewView" destination="ZqI-d7-ca8" id="7Td-Kx-FOR"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6mW-Oj-Ijn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xxt-2r-agP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3037" y="1105"/>
+            <point key="canvasLocation" x="3061" y="1105"/>
         </scene>
         <!--Item Details View Controller-->
         <scene sceneID="MQQ-7V-rZg">

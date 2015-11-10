@@ -10,6 +10,7 @@
 #import "BaseViewController.h"
 #import <UIImage+ResizeMagick.h>
 #import <ActionSheetPicker.h>
+#import "BarCodeReaderViewController.h"
 
 @interface AddItemViewController : BaseViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 

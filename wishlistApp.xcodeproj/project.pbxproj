@@ -21,7 +21,7 @@
 		C2E423B21BF0C3AE00DE2D8C /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E423B11BF0C3AE00DE2D8C /* Item.m */; };
 		C2E423B51BF0C76E00DE2D8C /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E423B41BF0C76E00DE2D8C /* AddItemViewController.m */; };
 		C2E423B81BF206CF00DE2D8C /* ItemDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E423B71BF206CF00DE2D8C /* ItemDetailsViewController.m */; };
-		C2E423BB1BF2532C00DE2D8C /* BarCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E423BA1BF2532C00DE2D8C /* BarCodeReaderViewController.m */; };
+		C2E423BE1BF2540A00DE2D8C /* BarCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E423BD1BF2540A00DE2D8C /* BarCodeReaderViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,8 +50,8 @@
 		C2E423B41BF0C76E00DE2D8C /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
 		C2E423B61BF206CF00DE2D8C /* ItemDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailsViewController.h; sourceTree = "<group>"; };
 		C2E423B71BF206CF00DE2D8C /* ItemDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailsViewController.m; sourceTree = "<group>"; };
-		C2E423B91BF2532C00DE2D8C /* BarCodeReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarCodeReaderViewController.h; sourceTree = "<group>"; };
-		C2E423BA1BF2532C00DE2D8C /* BarCodeReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarCodeReaderViewController.m; sourceTree = "<group>"; };
+		C2E423BC1BF2540A00DE2D8C /* BarCodeReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarCodeReaderViewController.h; sourceTree = "<group>"; };
+		C2E423BD1BF2540A00DE2D8C /* BarCodeReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarCodeReaderViewController.m; sourceTree = "<group>"; };
 		D2AB2443AFF816E38A404AC3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D7799A021BF14D8600456EC1 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,8 +134,8 @@
 		C2E4239D1BF0B46000DE2D8C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C2E423B91BF2532C00DE2D8C /* BarCodeReaderViewController.h */,
-				C2E423BA1BF2532C00DE2D8C /* BarCodeReaderViewController.m */,
+				C2E423BC1BF2540A00DE2D8C /* BarCodeReaderViewController.h */,
+				C2E423BD1BF2540A00DE2D8C /* BarCodeReaderViewController.m */,
 				C2E423B61BF206CF00DE2D8C /* ItemDetailsViewController.h */,
 				C2E423B71BF206CF00DE2D8C /* ItemDetailsViewController.m */,
 				C2E423B31BF0C76E00DE2D8C /* AddItemViewController.h */,
@@ -296,7 +296,7 @@
 				C2E423AE1BF0C04300DE2D8C /* BaseViewController.m in Sources */,
 				C2E423AB1BF0C01700DE2D8C /* Database.m in Sources */,
 				C2E423A21BF0B49600DE2D8C /* WishlistTableViewController.m in Sources */,
-				C2E423BB1BF2532C00DE2D8C /* BarCodeReaderViewController.m in Sources */,
+				C2E423BE1BF2540A00DE2D8C /* BarCodeReaderViewController.m in Sources */,
 				C2E4238B1BF0B3F600DE2D8C /* AppDelegate.m in Sources */,
 				C2E423B21BF0C3AE00DE2D8C /* Item.m in Sources */,
 				C2E423881BF0B3F600DE2D8C /* main.m in Sources */,

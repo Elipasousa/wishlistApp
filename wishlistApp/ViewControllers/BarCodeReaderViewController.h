@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MTBBarcodeScanner.h>
 
 @interface BarCodeReaderViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UIView *previewView;
+
+@property (nonatomic, copy) void (^codeReadBlock)(NSString *code);
 
 @end

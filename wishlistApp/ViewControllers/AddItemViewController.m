@@ -8,7 +8,9 @@
 
 #import "AddItemViewController.h"
 
-@interface AddItemViewController ()
+@interface AddItemViewController () {
+    NSInteger selectedBrandIndex;
+}
 
 @end
 
@@ -19,6 +21,8 @@
     [self setupNavigationBar];
     [self setupNavigationButton];
     [self setupDate];
+    
+    selectedBrandIndex = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,9 +113,9 @@
     if (textField == self.tagTextField) {
         [ActionSheetStringPicker showPickerWithTitle:@"Select a brand"
                                                 rows:BRAND_NAMES
-                                    initialSelection:0
+                                    initialSelection:selectedBrandIndex
                                            doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
-                                               NSLog(@"%@", selectedValue);
+                                               selectedBrandIndex = selectedIndex;
                                                self.tagTextField.text = selectedValue;
                                                [textField resignFirstResponder];
                                            }

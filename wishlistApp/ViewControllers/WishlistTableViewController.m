@@ -8,7 +8,9 @@
 
 #import "WishlistTableViewController.h"
 
-@interface WishlistTableViewController ()
+@interface WishlistTableViewController () {
+    NSInteger selectedBrandIndex;
+}
 
 @end
 
@@ -18,7 +20,10 @@
     [super viewDidLoad];
     [self setupNavigationBar];
     [self setupNavigationButton];
+    [self setupViews];
     [self registerNibs];
+    
+    selectedBrandIndex = 0;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -33,6 +38,10 @@
 }
 
 #pragma mark - Setup Methods
+
+-(void)setupViews {
+    self.filterView.backgroundColor = AquaBlueColorWithTransparency;
+}
 
 -(void)setupNavigationBar {
     self.navigationItem.hidesBackButton = YES;
@@ -55,14 +64,14 @@
                                                                     target:self
                                                                     action:@selector(addNewItem)];
     
-    /*UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_search"]
+    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_search"]
                                                                   style:UIBarButtonItemStylePlain
                                                                  target:self
                                                                  action:@selector(searchItem)];
     
     
-    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:addButton, searchButton, nil]];*/
-    self.navigationItem.rightBarButtonItem = addButton;
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:addButton, searchButton, nil]];
+    //self.navigationItem.rightBarButtonItem = addButton;
 
 }
 
@@ -71,6 +80,23 @@
 }
 
 -(void)searchItem {
+    [ActionSheetStringPicker showPickerWithTitle:@"Escolha a loja"
+                                            rows:BRAND_NAMES
+                                initialSelection:selectedBrandIndex
+                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                           selectedBrandIndex = selectedIndex;
+                                           NSString *tag_name = [BRAND_LOGOS objectForKey:selectedValue];
+                                            self.filterImageView.image = [UIImage imageNamed:tag_name];
+                                            self.filterViewHeightConstraint.constant = 44.0f;
+                                            self.filterView.hidden = NO;
+                                           
+                                           self.items = [[Database sharedDatabase] getItemsWithTag:selectedValue];
+                                           [self.tableView reloadData];
+                                       }
+                                     cancelBlock:^(ActionSheetStringPicker *picker) {
+                                         NSLog(@"Block Picker Canceled");
+                                     }
+                                          origin:self.view];
 }
 
 #pragma mark - Table View Methods
@@ -110,5 +136,14 @@
     return  100;
 }
 
+#pragma mark - Actions
 
+- (IBAction)clearFilterTouched:(id)sender {
+    selectedBrandIndex = 0;
+    self.filterView.hidden = YES;
+    self.filterViewHeightConstraint.constant = 0.0f;
+    self.items = [[Database sharedDatabase] getAllAddedItems];
+    [self.tableView reloadData];
+
+}
 @end

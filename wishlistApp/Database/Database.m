@@ -86,6 +86,7 @@
         i.tag = [s stringForColumn:@"item_tag"];
         i.price = [s stringForColumn:@"item_price"];
         i.addedOn = [s stringForColumn:@"item_addedOn"];
+        i.photo = [s stringForColumn:@"item_photo"];
         [items addObject:i];
     }
     return items;
@@ -102,6 +103,7 @@
         i.tag = [s stringForColumn:@"item_tag"];
         i.price = [s stringForColumn:@"item_price"];
         i.addedOn = [s stringForColumn:@"item_addedOn"];
+        i.photo = [s stringForColumn:@"item_photo"];
         [items addObject:i];
     }
     return items;
@@ -119,6 +121,7 @@
         [items addObject:i];
         i.price = [s stringForColumn:@"item_price"];
         i.addedOn = [s stringForColumn:@"item_addedOn"];
+        i.photo = [s stringForColumn:@"item_photo"];
     }
     return items;
 }

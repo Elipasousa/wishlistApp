@@ -33,6 +33,7 @@
 
 //Colors
 #define AquaBlueColor [UIColor colorWithRed:88.0/255.0 green:164.0/255.0 blue:162.0/255.0 alpha:1.0]
+#define AquaBlueColorWithTransparency [UIColor colorWithRed:88.0/255.0 green:164.0/255.0 blue:162.0/255.0 alpha:0.2]
 
 
 #endif /* Constants_h */

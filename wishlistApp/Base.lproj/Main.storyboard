@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vBn-El-fvL">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -27,6 +27,50 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="7W4-xd-8ub"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGB-PR-631">
+                                <rect key="frame" x="0.0" y="64" width="600" height="0.0"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kYM-2v-Ct8">
+                                        <rect key="frame" x="200" y="-10" width="200" height="20"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Y0b-gm-WXd"/>
+                                            <constraint firstAttribute="height" constant="20" id="gV4-c0-8Gj"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0A-uU-4yD">
+                                        <rect key="frame" x="552" y="-15" width="30" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="vuN-3x-3wc"/>
+                                            <constraint firstAttribute="height" constant="30" id="x0S-ls-WLn"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_clear"/>
+                                        <connections>
+                                            <action selector="clearFilterTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YgH-30-r6g"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="kYM-2v-Ct8" firstAttribute="leading" secondItem="OGB-PR-631" secondAttribute="leading" constant="5" id="8fU-0v-VUS"/>
+                                    <constraint firstItem="kYM-2v-Ct8" firstAttribute="top" secondItem="OGB-PR-631" secondAttribute="top" constant="10" id="GZi-9r-TZS"/>
+                                    <constraint firstItem="kYM-2v-Ct8" firstAttribute="centerX" secondItem="OGB-PR-631" secondAttribute="centerX" id="LDe-E5-IDZ"/>
+                                    <constraint firstAttribute="height" id="Oxh-v8-mtO"/>
+                                    <constraint firstAttribute="bottom" secondItem="kYM-2v-Ct8" secondAttribute="bottom" constant="10" id="WqA-uj-1vd"/>
+                                    <constraint firstItem="Q0A-uU-4yD" firstAttribute="centerY" secondItem="OGB-PR-631" secondAttribute="centerY" id="meA-yZ-64s"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q0A-uU-4yD" secondAttribute="trailing" constant="18" id="seb-1t-SXk"/>
+                                    <constraint firstItem="kYM-2v-Ct8" firstAttribute="centerY" secondItem="OGB-PR-631" secondAttribute="centerY" id="yma-Ts-vGg"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8fU-0v-VUS"/>
+                                        <exclude reference="GZi-9r-TZS"/>
+                                        <exclude reference="WqA-uj-1vd"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -35,16 +79,26 @@
                             <constraint firstItem="vBn-El-fvL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6QU-dz-aVR"/>
                             <constraint firstItem="vBn-El-fvL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Iqa-GI-3ML"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vBn-El-fvL" secondAttribute="bottom" id="R2B-Z4-fMw"/>
+                            <constraint firstAttribute="trailing" secondItem="OGB-PR-631" secondAttribute="trailing" id="U9f-pJ-Qgp"/>
+                            <constraint firstItem="OGB-PR-631" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ya4-6c-PRp"/>
+                            <constraint firstItem="OGB-PR-631" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eZy-SH-XDq"/>
                             <constraint firstAttribute="trailing" secondItem="vBn-El-fvL" secondAttribute="trailing" id="fQV-Su-8Pt"/>
+                            <constraint firstItem="OGB-PR-631" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="giq-Mn-oXF"/>
+                            <constraint firstItem="vBn-El-fvL" firstAttribute="top" secondItem="OGB-PR-631" secondAttribute="bottom" id="qGW-j4-vRW"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="eZy-SH-XDq"/>
                                 <exclude reference="2Mv-1Y-i0S"/>
+                                <exclude reference="Iqa-GI-3ML"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="SBx-8u-AIh"/>
                     <connections>
+                        <outlet property="filterImageView" destination="kYM-2v-Ct8" id="9jZ-Uk-Sjk"/>
+                        <outlet property="filterView" destination="OGB-PR-631" id="xPQ-t9-zXC"/>
+                        <outlet property="filterViewHeightConstraint" destination="Oxh-v8-mtO" id="MJS-Us-oz3"/>
                         <outlet property="tableView" destination="vBn-El-fvL" id="xfX-bs-3eo"/>
                         <segue destination="aSe-k3-5ck" kind="show" identifier="addNewItem" id="CEn-at-r6c"/>
                     </connections>
@@ -329,6 +383,7 @@
     </scenes>
     <resources>
         <image name="ic_camera" width="24" height="24"/>
+        <image name="ic_clear" width="24" height="24"/>
         <image name="ic_gallery" width="24" height="24"/>
         <image name="inserthere" width="305" height="305"/>
     </resources>

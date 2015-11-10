@@ -14,6 +14,10 @@
 @interface WishlistTableViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *filterView;
+@property (weak, nonatomic) IBOutlet UIImageView *filterImageView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *filterViewHeightConstraint;
+- (IBAction)clearFilterTouched:(id)sender;
 
 @property (strong, nonatomic) NSArray *items;
 

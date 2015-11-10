@@ -35,7 +35,18 @@
 #pragma mark - Setup Methods
 
 -(void)setupNavigationBar {
-    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    self.navigationItem.hidesBackButton = YES;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+    self.navigationController.view.backgroundColor = AquaBlueColor;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barTintColor = AquaBlueColor;
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    self.navigationController.navigationBar.opaque = YES;
+    self.navigationController.navigationBar.translucent = NO;
+    
+    
+    //self.navigationController.navigationBar.tintColor = [UIColor blackColor];
 }
 
 -(void)setupNavigationButton {

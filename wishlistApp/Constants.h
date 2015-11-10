@@ -9,6 +9,7 @@
 #ifndef Constants_h
 #define Constants_h
 
+//Brands
 #define ALDO @"Aldo"
 #define ASOS @"Asos"
 #define BERSHKA @"Bershka"
@@ -28,6 +29,10 @@
 #define BRAND_NAMES @[ALDO, ASOS, BERSHKA, BIMBA_Y_LOLA, CALZEDONIA, H_M, INTIMISSIMI, MANGO, MASSIMO_DUTTI, NEW_YORKER, PULL_AND_BEAR, STRADIVARIUS, TEZENIS, UTERQUE, ZARA]
 
 #define BRAND_LOGOS @{ALDO : @"aldo", ASOS : @"asos", BERSHKA : @"bershka", BIMBA_Y_LOLA : @"bimbaylola", CALZEDONIA : @"calzedonia", H_M : @"hm", INTIMISSIMI : @"intimissimi", MANGO : @"mango", MASSIMO_DUTTI : @"massimodutti", NEW_YORKER : @"newyorker", PULL_AND_BEAR : @"pullandbear", STRADIVARIUS : @"stradivarius", TEZENIS : @"tezenis", UTERQUE : @"uterque", ZARA : @"zara"}
+
+
+//Colors
+#define AquaBlueColor [UIColor colorWithRed:88.0/255.0 green:164.0/255.0 blue:162.0/255.0 alpha:1.0]
 
 
 #endif /* Constants_h */

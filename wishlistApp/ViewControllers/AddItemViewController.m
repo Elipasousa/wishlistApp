@@ -38,7 +38,7 @@
 }
 
 -(void)setupNavigationBar {
-    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    //self.navigationController.navigationBar.tintColor = [UIColor blackColor];
 }
 
 -(void)setupNavigationButton {
@@ -120,6 +120,11 @@
                                              [textField resignFirstResponder];
                                          }
                                               origin:self.view];
+    }
+    else if (textField == self.priceTextField) {
+        if (![self.priceTextField.text isEqualToString:@""]) {
+            self.priceTextField.text = [self.priceTextField.text substringToIndex:[self.priceTextField.text length]-2];
+        }
     }
 }
 

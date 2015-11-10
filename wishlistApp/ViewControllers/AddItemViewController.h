@@ -22,4 +22,6 @@
 - (IBAction)cameraTouched:(id)sender;
 - (IBAction)galleryTouched:(id)sender;
 
+@property (strong, nonatomic) Item *item;
+
 @end

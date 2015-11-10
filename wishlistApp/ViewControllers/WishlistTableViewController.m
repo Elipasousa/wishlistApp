@@ -10,6 +10,8 @@
 
 @interface WishlistTableViewController () {
     NSInteger selectedBrandIndex;
+    NSInteger selectedIemIndex;
+    BOOL filterIsActive;
 }
 
 @end
@@ -24,12 +26,16 @@
     [self registerNibs];
     
     selectedBrandIndex = 0;
+    filterIsActive = NO;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.items = [[Database sharedDatabase] getAllAddedItems];
-    [self.tableView reloadData];
+    
+    if (!filterIsActive) {
+        self.items = [[Database sharedDatabase] getAllAddedItems];
+        [self.tableView reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,6 +91,8 @@
                                 initialSelection:selectedBrandIndex
                                        doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
                                            selectedBrandIndex = selectedIndex;
+                                           filterIsActive = YES;
+                                           
                                            NSString *tag_name = [BRAND_LOGOS objectForKey:selectedValue];
                                             self.filterImageView.image = [UIImage imageNamed:tag_name];
                                             self.filterViewHeightConstraint.constant = 44.0f;
@@ -146,6 +154,7 @@
 
 - (IBAction)clearFilterTouched:(id)sender {
     selectedBrandIndex = 0;
+    filterIsActive = NO;
     self.filterView.hidden = YES;
     self.filterViewHeightConstraint.constant = 0.0f;
     self.items = [[Database sharedDatabase] getAllAddedItems];
@@ -164,16 +173,25 @@
 }
 
 -(void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
-    //NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     [cell hideUtilityButtonsAnimated:YES];
+    selectedIemIndex = indexPath.row;
     
     switch (index) {
         case 0: { //Editar
-            NSLog(@"0 touched");
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            AddItemViewController *target =  (AddItemViewController*)[storyboard instantiateViewControllerWithIdentifier:@"AddItemViewController"];
+            target.item = [self.items objectAtIndex:indexPath.row];
+            [self.navigationController pushViewController:target animated:YES];
             break;
         }
         case 1: { //Aagar
-            NSLog(@"1 touched");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Atenção"
+                                                            message:@"Tem a certeza que pretende eliminar este artigo?"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Cancelar"
+                                                  otherButtonTitles:@"Sim",nil];
+            [alert show];
             break;
         }
     }
@@ -181,6 +199,17 @@
 
 -(BOOL)swipeableTableViewCellShouldHideUtilityButtonsOnSwipe:(SWTableViewCell *)cell {
     return YES;
+}
+
+#pragma mark - Alert View
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) { //YES pressed
+        Item *i = [self.items objectAtIndex:selectedIemIndex];
+        [[Database sharedDatabase] deleteItemWithId:i.item_id];
+        self.items = [[Database sharedDatabase] getAllAddedItems];
+        [self.tableView reloadData];
+    }
 }
 
 @end

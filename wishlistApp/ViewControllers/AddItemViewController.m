@@ -30,6 +30,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self setupViews];
+}
+
+-(void)setupViews {
+    if (self.item == nil) {
+        return;
+    }
+    
+    self.titleTextField.text = self.item.title;
+    self.referenceTextField.text = self.item.reference;
+    self.priceTextField.text = self.item.price;
+    self.tagTextField.text = self.item.tag;
+    
+    NSData *data = [[NSData alloc]initWithBase64EncodedString:self.item.photo options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    self.photoImageView.image =[UIImage imageWithData:data];
+}
+
 #pragma mark - Setup Methods
 
 -(void)setupDate {
@@ -57,8 +76,17 @@
 -(void)doneAddingItem {
     if ([self validaFields]) {
         NSString *stringFromPhoto = [UIImagePNGRepresentation(self.photoImageView.image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-
-        [[Database sharedDatabase] addItemWithTitle:self.titleTextField.text reference:self.referenceTextField.text tag:self.tagTextField.text price:self.priceTextField.text addedOn:@"123" photo:stringFromPhoto];
+        
+        if (self.item == nil) {
+            NSDate *currentDate = [NSDate date];
+            NSDateFormatter * dateFormart = [[NSDateFormatter alloc] init];
+            [dateFormart setDateFormat:@"dd-MM-yyyy"];
+            NSString *stringdate = [dateFormart stringFromDate:currentDate];
+            
+            [[Database sharedDatabase] addItemWithTitle:self.titleTextField.text reference:self.referenceTextField.text tag:self.tagTextField.text price:self.priceTextField.text addedOn:stringdate photo:stringFromPhoto];
+        } else {
+            [[Database sharedDatabase] updateItemWithID:self.item.item_id WithTitle:self.titleTextField.text reference:self.referenceTextField.text tag:self.tagTextField.text price:self.priceTextField.text addedOn:self.item.addedOn photo:stringFromPhoto];
+        }
         [self.navigationController popViewControllerAnimated:YES];
     } else {
         [self showConfirmDialogWithTitle:@"Atention" andMessage:@"Please insert all information"];
@@ -66,10 +94,9 @@
 }
 
 -(BOOL)validaFields {
-    /*return  ![self.titleTextField.text isEqualToString:@""] &&
+    return  ![self.titleTextField.text isEqualToString:@""] &&
             ![self.tagTextField.text isEqualToString:@""] &&
-            ![self.priceTextField.text isEqualToString:@""];*/
-    return  YES;
+            ![self.priceTextField.text isEqualToString:@""];
 }
 
 #pragma mark - Actions Methods

@@ -10,6 +10,7 @@
 
 @interface Item : NSObject
 
+@property (nonatomic) NSInteger item_id;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *reference;
 @property (strong, nonatomic) NSString *tag;

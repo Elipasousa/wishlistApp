@@ -64,6 +64,7 @@
 
     while ([s next]) {
         Item *i = [[Item alloc] init];
+        i.item_id = [s intForColumn:@"item_id"];
         i.title = [s stringForColumn:@"item_title"];
         i.reference = [s stringForColumn:@"item_reference"];
         i.tag = [s stringForColumn:@"item_tag"];
@@ -81,6 +82,7 @@
     
     while ([s next]) {
         Item *i = [[Item alloc] init];
+        i.item_id = [s intForColumn:@"item_id"];
         i.title = [s stringForColumn:@"item_title"];
         i.reference = [s stringForColumn:@"item_reference"];
         i.tag = [s stringForColumn:@"item_tag"];
@@ -98,6 +100,7 @@
     
     while ([s next]) {
         Item *i = [[Item alloc] init];
+        i.item_id = [s intForColumn:@"item_id"];
         i.title = [s stringForColumn:@"item_title"];
         i.reference = [s stringForColumn:@"item_reference"];
         i.tag = [s stringForColumn:@"item_tag"];
@@ -115,6 +118,7 @@
     
     while ([s next]) {
         Item *i = [[Item alloc] init];
+        i.item_id = [s intForColumn:@"item_id"];
         i.title = [s stringForColumn:@"item_title"];
         i.reference = [s stringForColumn:@"item_reference"];
         i.tag = [s stringForColumn:@"item_tag"];
@@ -126,12 +130,12 @@
     return items;
 }
 
-/*-(BOOL)updateFileWithLocalName:(NSString *)local_name andSetAmazonURL:(NSString *)amazon_url {
-    return  [self.db executeUpdate:[NSString stringWithFormat:@"UPDATE Items SET item_title='%@' WHERE local_photo_path='%@';", amazon_url, local_name]];
-}*/
+-(BOOL)updateItemWithID:(NSInteger)item_id WithTitle:(NSString *)item_title reference:(NSString *)item_reference tag:(NSString *)item_tag price:(NSString *)item_price addedOn:(NSString *)item_addedOn photo:(NSString *)item_photo {
+    return  [self.db executeUpdate:[NSString stringWithFormat:@"UPDATE Items SET item_title='%@', item_reference='%@', item_tag='%@', item_price='%@', item_addedOn='%@', item_photo='%@' WHERE item_id=%ld;", item_title, item_reference, item_tag, item_price, item_addedOn, item_photo, item_id]];
+}
 
--(BOOL)deleteItemWithTitle:(NSString *)item_title {
-    return [self.db executeUpdate:[NSString stringWithFormat:@"DELETE FROM Items WHERE item_title='%@';", item_title]];
+-(BOOL)deleteItemWithId:(NSInteger)item_id {
+    return [self.db executeUpdate:[NSString stringWithFormat:@"DELETE FROM Items WHERE item_id=%ld;", item_id]];
 }
 
 @end

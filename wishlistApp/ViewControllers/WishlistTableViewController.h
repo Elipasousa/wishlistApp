@@ -10,6 +10,7 @@
 #import "WishlistInfoTableViewCell.h"
 #import "BaseViewController.h"
 #import "AddItemViewController.h"
+#import "ItemDetailsViewController.h"
 
 @interface WishlistTableViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate>
 

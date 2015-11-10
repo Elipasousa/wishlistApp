@@ -128,6 +128,10 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ItemDetailsViewController *target =  (ItemDetailsViewController*)[storyboard instantiateViewControllerWithIdentifier:@"ItemDetailsViewController"];
+    target.item = [self.items objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:target animated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
@@ -144,6 +148,6 @@
     self.filterViewHeightConstraint.constant = 0.0f;
     self.items = [[Database sharedDatabase] getAllAddedItems];
     [self.tableView reloadData];
-
 }
+
 @end

@@ -20,6 +20,7 @@
 		C2E423AE1BF0C04300DE2D8C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E423AD1BF0C04300DE2D8C /* BaseViewController.m */; };
 		C2E423B21BF0C3AE00DE2D8C /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E423B11BF0C3AE00DE2D8C /* Item.m */; };
 		C2E423B51BF0C76E00DE2D8C /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E423B41BF0C76E00DE2D8C /* AddItemViewController.m */; };
+		C2E423B81BF206CF00DE2D8C /* ItemDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E423B71BF206CF00DE2D8C /* ItemDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		C2E423B11BF0C3AE00DE2D8C /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		C2E423B31BF0C76E00DE2D8C /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
 		C2E423B41BF0C76E00DE2D8C /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
+		C2E423B61BF206CF00DE2D8C /* ItemDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailsViewController.h; sourceTree = "<group>"; };
+		C2E423B71BF206CF00DE2D8C /* ItemDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailsViewController.m; sourceTree = "<group>"; };
 		D2AB2443AFF816E38A404AC3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D7799A021BF14D8600456EC1 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +131,8 @@
 		C2E4239D1BF0B46000DE2D8C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C2E423B61BF206CF00DE2D8C /* ItemDetailsViewController.h */,
+				C2E423B71BF206CF00DE2D8C /* ItemDetailsViewController.m */,
 				C2E423B31BF0C76E00DE2D8C /* AddItemViewController.h */,
 				C2E423B41BF0C76E00DE2D8C /* AddItemViewController.m */,
 				C2E423A01BF0B49600DE2D8C /* WishlistTableViewController.h */,
@@ -282,6 +287,7 @@
 			files = (
 				C2E423A71BF0B6FD00DE2D8C /* WishlistInfoTableViewCell.m in Sources */,
 				C2E423B51BF0C76E00DE2D8C /* AddItemViewController.m in Sources */,
+				C2E423B81BF206CF00DE2D8C /* ItemDetailsViewController.m in Sources */,
 				C2E423AE1BF0C04300DE2D8C /* BaseViewController.m in Sources */,
 				C2E423AB1BF0C01700DE2D8C /* Database.m in Sources */,
 				C2E423A21BF0B49600DE2D8C /* WishlistTableViewController.m in Sources */,

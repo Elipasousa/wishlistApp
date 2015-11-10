@@ -14,14 +14,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uNe-Oz-DR4">
-                        <rect key="frame" x="8" y="8" width="84" height="84"/>
-                        <animations/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="84" id="HMW-Ht-0SS"/>
-                            <constraint firstAttribute="width" constant="84" id="hnN-lL-1ic"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPU-1f-eyP">
                         <rect key="frame" x="100" y="8" width="212" height="24"/>
                         <animations/>
@@ -63,6 +55,14 @@
                                 <exclude reference="jG9-6i-8fx"/>
                             </mask>
                         </variation>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uNe-Oz-DR4">
+                        <rect key="frame" x="8" y="8" width="84" height="84"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="84" id="HMW-Ht-0SS"/>
+                            <constraint firstAttribute="width" constant="84" id="hnN-lL-1ic"/>
+                        </constraints>
                     </imageView>
                 </subviews>
                 <animations/>

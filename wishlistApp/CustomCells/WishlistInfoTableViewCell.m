@@ -41,7 +41,7 @@
         self.tagLabel.text = self.item.tag;
     }
 
-    NSData *data = [[NSData alloc]initWithBase64EncodedString:self.item.photo options:NSDataBase64DecodingIgnoreUnknownCharacters];    
+    NSData *data = [[NSData alloc]initWithBase64EncodedString:self.item.photo options:NSDataBase64DecodingIgnoreUnknownCharacters];
     self.photoImageView.image =[UIImage imageWithData:data];
 }
 

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Item.h"
 #import "Constants.h"
+#import <SWTableViewCell/SWTableViewCell.h>
 
-@interface WishlistInfoTableViewCell : UITableViewCell
+@interface WishlistInfoTableViewCell : SWTableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

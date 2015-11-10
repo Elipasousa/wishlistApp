@@ -11,8 +11,9 @@
 #import "BaseViewController.h"
 #import "AddItemViewController.h"
 #import "ItemDetailsViewController.h"
+#import <SWTableViewCell/SWTableViewCell.h>
 
-@interface WishlistTableViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate>
+@interface WishlistTableViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, SWTableViewCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *filterView;

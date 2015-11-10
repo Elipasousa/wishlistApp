@@ -124,6 +124,8 @@
         cell = [nib objectAtIndex:0];
     }
     cell.item = [self.items objectAtIndex:indexPath.row];
+    cell.rightUtilityButtons = [self rightButtons];
+    cell.delegate = self;
     return cell;
 }
 
@@ -148,6 +150,37 @@
     self.filterViewHeightConstraint.constant = 0.0f;
     self.items = [[Database sharedDatabase] getAllAddedItems];
     [self.tableView reloadData];
+}
+
+#pragma mark - SWTableViewCell Methods
+
+-(NSArray *)rightButtons {
+    NSMutableArray *rightUtilityButtons = [NSMutableArray new];
+    //[rightUtilityButtons sw_addUtilityButtonWithColor:OliveColor title:@"Comprado"];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:GoldColor title:@"Editar"];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:FireBrickColor title:@"Apagar"];
+    
+    return rightUtilityButtons;
+}
+
+-(void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
+    //NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    [cell hideUtilityButtonsAnimated:YES];
+    
+    switch (index) {
+        case 0: { //Editar
+            NSLog(@"0 touched");
+            break;
+        }
+        case 1: { //Aagar
+            NSLog(@"1 touched");
+            break;
+        }
+    }
+}
+
+-(BOOL)swipeableTableViewCellShouldHideUtilityButtonsOnSwipe:(SWTableViewCell *)cell {
+    return YES;
 }
 
 @end

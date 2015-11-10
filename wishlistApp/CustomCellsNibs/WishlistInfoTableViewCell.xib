@@ -51,10 +51,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uRy-ZE-DEV">
-                        <rect key="frame" x="100" y="72" width="60" height="20"/>
+                        <rect key="frame" x="100" y="72" width="65" height="20"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="BD6-do-aDJ"/>
+                            <constraint firstAttribute="width" constant="65" id="BD6-do-aDJ"/>
                             <constraint firstAttribute="height" constant="20" id="GPT-mV-JhW"/>
                             <constraint firstAttribute="height" constant="20" id="jG9-6i-8fx"/>
                         </constraints>

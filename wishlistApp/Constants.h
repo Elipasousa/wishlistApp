@@ -20,15 +20,16 @@
 #define MANGO @"Mango"
 #define MASSIMO_DUTTI @"Massimo Dutti"
 #define NEW_YORKER @"New Yorker"
+#define PRIMARK @"Primark"
 #define PULL_AND_BEAR @"Pull and Bear"
 #define STRADIVARIUS @"Stradivarius"
 #define TEZENIS @"Tezenis"
 #define UTERQUE @"Uterque"
 #define ZARA @"Zara"
 
-#define BRAND_NAMES @[ALDO, ASOS, BERSHKA, BIMBA_Y_LOLA, CALZEDONIA, H_M, INTIMISSIMI, MANGO, MASSIMO_DUTTI, NEW_YORKER, PULL_AND_BEAR, STRADIVARIUS, TEZENIS, UTERQUE, ZARA]
+#define BRAND_NAMES @[ALDO, ASOS, BERSHKA, BIMBA_Y_LOLA, CALZEDONIA, H_M, INTIMISSIMI, MANGO, MASSIMO_DUTTI, NEW_YORKER, PRIMARK, PULL_AND_BEAR, STRADIVARIUS, TEZENIS, UTERQUE, ZARA]
 
-#define BRAND_LOGOS @{ALDO : @"aldo", ASOS : @"asos", BERSHKA : @"bershka", BIMBA_Y_LOLA : @"bimbaylola", CALZEDONIA : @"calzedonia", H_M : @"hm", INTIMISSIMI : @"intimissimi", MANGO : @"mango", MASSIMO_DUTTI : @"massimodutti", NEW_YORKER : @"newyorker", PULL_AND_BEAR : @"pullandbear", STRADIVARIUS : @"stradivarius", TEZENIS : @"tezenis", UTERQUE : @"uterque", ZARA : @"zara"}
+#define BRAND_LOGOS @{ALDO : @"aldo", ASOS : @"asos", BERSHKA : @"bershka", BIMBA_Y_LOLA : @"bimbaylola", CALZEDONIA : @"calzedonia", H_M : @"hm", INTIMISSIMI : @"intimissimi", MANGO : @"mango", MASSIMO_DUTTI : @"massimodutti", NEW_YORKER : @"newyorker", PRIMARK : @"primark", PULL_AND_BEAR : @"pullandbear", STRADIVARIUS : @"stradivarius", TEZENIS : @"tezenis", UTERQUE : @"uterque", ZARA : @"zara"}
 
 
 //Colors

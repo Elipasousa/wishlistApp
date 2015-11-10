@@ -47,6 +47,7 @@
 
 -(void)setupViews {
     self.filterView.backgroundColor = AquaBlueColorWithTransparency;
+    [self.tableView setSeparatorColor:AquaBlueColor];
 }
 
 -(void)setupNavigationBar {

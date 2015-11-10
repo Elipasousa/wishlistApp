@@ -186,7 +186,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="G62-gm-FuC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XVV-Ee-c7q" userLabel="Separator">
@@ -212,8 +212,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4cs-jN-iex"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="4cs-jN-iex"/>
@@ -234,7 +234,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="pYT-q5-K1e"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -259,7 +259,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="l7k-eI-jMf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -399,10 +399,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tcy-mR-h46">
-                                <rect key="frame" x="16" y="561" width="60" height="20"/>
+                                <rect key="frame" x="16" y="560" width="70" height="20"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Ixa-yt-XWx"/>
+                                    <constraint firstAttribute="width" constant="70" id="Ixa-yt-XWx"/>
                                     <constraint firstAttribute="height" constant="20" id="Lms-Zr-tIo"/>
                                 </constraints>
                             </imageView>
@@ -415,6 +415,7 @@
                             <constraint firstItem="Tcy-mR-h46" firstAttribute="centerY" secondItem="IuK-jV-7u0" secondAttribute="centerY" id="8ZR-VS-cNh"/>
                             <constraint firstItem="JWT-13-WHH" firstAttribute="leading" secondItem="EFf-Px-4VY" secondAttribute="leading" constant="16" id="YUf-k2-rnE"/>
                             <constraint firstItem="JWT-13-WHH" firstAttribute="top" secondItem="vX9-Vq-6og" secondAttribute="bottom" constant="10" id="bv4-3V-dhI"/>
+                            <constraint firstItem="Tcy-mR-h46" firstAttribute="bottom" secondItem="IuK-jV-7u0" secondAttribute="bottom" id="bx0-nx-mDL"/>
                             <constraint firstAttribute="trailing" secondItem="vX9-Vq-6og" secondAttribute="trailing" id="dHp-C2-QRv"/>
                             <constraint firstItem="id0-Lk-C4h" firstAttribute="top" secondItem="vX9-Vq-6og" secondAttribute="bottom" constant="100" id="g7v-3f-Psl"/>
                             <constraint firstItem="lVV-3H-aFq" firstAttribute="centerY" secondItem="IuK-jV-7u0" secondAttribute="centerY" id="jlI-dZ-SeS"/>
@@ -423,6 +424,11 @@
                             <constraint firstItem="id0-Lk-C4h" firstAttribute="top" secondItem="IuK-jV-7u0" secondAttribute="bottom" constant="20" id="qIr-OO-yFB"/>
                             <constraint firstItem="vX9-Vq-6og" firstAttribute="leading" secondItem="EFf-Px-4VY" secondAttribute="leading" id="uhO-HU-zf9"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8ZR-VS-cNh"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="brandImageView" destination="Tcy-mR-h46" id="mLu-H1-Z8q"/>

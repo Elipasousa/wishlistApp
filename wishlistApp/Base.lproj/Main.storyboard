@@ -157,14 +157,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxV-BD-yW5" userLabel="camera">
-                                <rect key="frame" x="0.0" y="234" width="300" height="30"/>
+                                <rect key="frame" x="0.0" y="224" width="300" height="40"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_camera" translatesAutoresizingMaskIntoConstraints="NO" id="xf2-W3-iV9">
-                                        <rect key="frame" x="138" y="3" width="24" height="24"/>
+                                        <rect key="frame" x="138" y="8" width="24" height="24"/>
                                         <animations/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38t-vt-oDM">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
                                         <animations/>
                                         <connections>
                                             <action selector="cameraTouched:" destination="aSe-k3-5ck" eventType="touchUpInside" id="8xo-JW-hFm"/>
@@ -177,21 +177,21 @@
                                     <constraint firstItem="38t-vt-oDM" firstAttribute="centerY" secondItem="cxV-BD-yW5" secondAttribute="centerY" id="57i-Lw-aEI"/>
                                     <constraint firstItem="xf2-W3-iV9" firstAttribute="centerY" secondItem="cxV-BD-yW5" secondAttribute="centerY" id="DmM-qZ-Wjn"/>
                                     <constraint firstItem="38t-vt-oDM" firstAttribute="width" secondItem="cxV-BD-yW5" secondAttribute="width" id="Lhg-cZ-v7k"/>
-                                    <constraint firstAttribute="height" constant="30" id="P3Y-qV-mul"/>
+                                    <constraint firstAttribute="height" constant="40" id="P3Y-qV-mul"/>
                                     <constraint firstItem="38t-vt-oDM" firstAttribute="height" secondItem="cxV-BD-yW5" secondAttribute="height" id="Yw9-d1-V1R"/>
                                     <constraint firstItem="38t-vt-oDM" firstAttribute="centerX" secondItem="cxV-BD-yW5" secondAttribute="centerX" id="mxk-0f-ZgG"/>
                                     <constraint firstItem="xf2-W3-iV9" firstAttribute="centerX" secondItem="cxV-BD-yW5" secondAttribute="centerX" id="wSw-fe-ESD"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fw6-ni-unT" userLabel="gallery">
-                                <rect key="frame" x="300" y="234" width="300" height="30"/>
+                                <rect key="frame" x="300" y="224" width="300" height="40"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_gallery" translatesAutoresizingMaskIntoConstraints="NO" id="pAS-Zx-qfe">
-                                        <rect key="frame" x="138" y="3" width="24" height="24"/>
+                                        <rect key="frame" x="138" y="8" width="24" height="24"/>
                                         <animations/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeG-Qg-Pro">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
                                         <animations/>
                                         <connections>
                                             <action selector="galleryTouched:" destination="aSe-k3-5ck" eventType="touchUpInside" id="9Qh-NI-LQX"/>
@@ -338,7 +338,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cxV-BD-yW5" firstAttribute="top" secondItem="uQI-bX-Ttc" secondAttribute="bottom" constant="20" id="0Lr-Cl-4eo"/>
+                            <constraint firstItem="cxV-BD-yW5" firstAttribute="top" secondItem="uQI-bX-Ttc" secondAttribute="bottom" constant="10" id="0Lr-Cl-4eo"/>
                             <constraint firstItem="XVV-Ee-c7q" firstAttribute="height" secondItem="gUb-eu-KZ4" secondAttribute="height" id="1KU-MO-ZnO"/>
                             <constraint firstAttribute="trailing" secondItem="PwD-HX-IeY" secondAttribute="trailing" constant="10" id="1LA-JD-6S8"/>
                             <constraint firstItem="cPG-En-RVn" firstAttribute="top" secondItem="uoW-iZ-ksv" secondAttribute="bottom" id="2PY-Ov-UhH"/>

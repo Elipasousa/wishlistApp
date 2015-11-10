@@ -154,7 +154,7 @@
                                            }
                                          cancelBlock:^(ActionSheetStringPicker *picker) {
                                              NSLog(@"Block Picker Canceled");
-                                             [textField resignFirstResponder];
+                                             //[textField resignFirstResponder];
                                          }
                                               origin:self.view];
     }

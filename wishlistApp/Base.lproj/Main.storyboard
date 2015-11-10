@@ -77,22 +77,22 @@
                                 <rect key="frame" x="0.0" y="580" width="600" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbO-OA-N7r">
-                                        <rect key="frame" x="16" y="3" width="33" height="15"/>
+                                        <rect key="frame" x="16" y="2" width="36" height="16"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lf-QN-B78">
-                                        <rect key="frame" x="551" y="3" width="33" height="15"/>
+                                        <rect key="frame" x="548" y="2" width="36" height="16"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="5lf-QN-B78" firstAttribute="centerY" secondItem="mwo-wN-6uc" secondAttribute="centerY" id="6aE-RH-fXn"/>
                                     <constraint firstItem="fbO-OA-N7r" firstAttribute="centerY" secondItem="mwo-wN-6uc" secondAttribute="centerY" id="JtV-g5-sJM"/>

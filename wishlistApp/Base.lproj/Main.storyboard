@@ -244,7 +244,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Referência (opcional)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YzC-P9-Y9A">
-                                <rect key="frame" x="10" y="336" width="580" height="50"/>
+                                <rect key="frame" x="10" y="336" width="525" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4cs-jN-iex"/>
@@ -371,6 +371,7 @@
                             <constraint firstItem="M68-C3-euh" firstAttribute="leading" secondItem="XVV-Ee-c7q" secondAttribute="leading" id="U1K-wp-QZg"/>
                             <constraint firstItem="uQI-bX-Ttc" firstAttribute="top" secondItem="Ny2-Sh-4gK" secondAttribute="bottom" constant="40" id="VCN-2p-agv"/>
                             <constraint firstItem="IrP-pm-rYj" firstAttribute="leading" secondItem="zHD-2D-QOQ" secondAttribute="leading" constant="10" id="WIj-mg-f7p"/>
+                            <constraint firstItem="UCi-rj-aG6" firstAttribute="leading" secondItem="YzC-P9-Y9A" secondAttribute="trailing" constant="5" id="Wix-cu-slR"/>
                             <constraint firstItem="YzC-P9-Y9A" firstAttribute="top" secondItem="XVV-Ee-c7q" secondAttribute="bottom" id="YB4-aJ-3MG"/>
                             <constraint firstItem="GwQ-wW-op3" firstAttribute="height" secondItem="cPG-En-RVn" secondAttribute="height" id="Zhc-ts-mvs"/>
                             <constraint firstItem="uoW-iZ-ksv" firstAttribute="height" secondItem="YzC-P9-Y9A" secondAttribute="height" id="Zj5-j8-1tx"/>
@@ -381,6 +382,7 @@
                             <constraint firstItem="gUb-eu-KZ4" firstAttribute="top" secondItem="fw6-ni-unT" secondAttribute="bottom" constant="20" id="op9-OX-n3K"/>
                             <constraint firstItem="YzC-P9-Y9A" firstAttribute="leading" secondItem="PwD-HX-IeY" secondAttribute="leading" id="pIh-Kg-zGr"/>
                             <constraint firstItem="fw6-ni-unT" firstAttribute="centerY" secondItem="cxV-BD-yW5" secondAttribute="centerY" id="qAf-cq-Pdq"/>
+                            <constraint firstItem="uoW-iZ-ksv" firstAttribute="trailing" secondItem="PwD-HX-IeY" secondAttribute="trailing" id="qWR-d5-vIb"/>
                             <constraint firstItem="M68-C3-euh" firstAttribute="height" secondItem="XVV-Ee-c7q" secondAttribute="height" id="sGS-tm-h9T"/>
                             <constraint firstItem="uQI-bX-Ttc" firstAttribute="top" secondItem="Ny2-Sh-4gK" secondAttribute="bottom" constant="20" id="szb-2P-dJk"/>
                             <constraint firstItem="uoW-iZ-ksv" firstAttribute="leading" secondItem="YzC-P9-Y9A" secondAttribute="leading" id="tnl-gA-HI9"/>
@@ -395,7 +397,9 @@
                                 <exclude reference="3NY-d3-wit"/>
                                 <exclude reference="79C-JD-Y1B"/>
                                 <exclude reference="VCN-2p-agv"/>
+                                <exclude reference="JHI-dT-9pm"/>
                                 <exclude reference="RwM-ZE-fPC"/>
+                                <exclude reference="KzP-R6-Rjn"/>
                             </mask>
                         </variation>
                     </view>

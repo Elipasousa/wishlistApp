@@ -31,16 +31,34 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+    [self showAllItems];
     if (!filterIsActive) {
-        self.items = [[Database sharedDatabase] getAllAddedItems];
-        [self.tableView reloadData];
+
     }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)showAllItems {
+    self.items = [[Database sharedDatabase] getAllAddedItems];
+    [self setTotalAndPriceLabels];
+    [self.tableView reloadData];
+}
+
+-(void)setTotalAndPriceLabels {
+    self.totalItemsLabel.text = [NSString stringWithFormat:@"%ld artigos", (long) [self.items count]];
+    
+    float total_price = 0.0;
+    for (Item *i in self.items) {
+        NSString *value = [i.price stringByReplacingOccurrencesOfString:@"," withString:@"."];
+        NSLog(@"%f ", total_price);
+
+        total_price += [value floatValue];
+    }
+    self.totalPriceLabel.text = [NSString stringWithFormat:@"%.02f €", total_price];
 }
 
 #pragma mark - Setup Methods
@@ -100,6 +118,7 @@
                                             self.filterView.hidden = NO;
                                            
                                            self.items = [[Database sharedDatabase] getItemsWithTag:selectedValue];
+                                           [self setTotalAndPriceLabels];
                                            [self.tableView reloadData];
                                        }
                                      cancelBlock:^(ActionSheetStringPicker *picker) {
@@ -148,7 +167,7 @@
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return  100;
+    return  110;
 }
 
 #pragma mark - Actions
@@ -158,8 +177,7 @@
     filterIsActive = NO;
     self.filterView.hidden = YES;
     self.filterViewHeightConstraint.constant = 0.0f;
-    self.items = [[Database sharedDatabase] getAllAddedItems];
-    [self.tableView reloadData];
+    [self showAllItems];
 }
 
 #pragma mark - SWTableViewCell Methods
@@ -208,8 +226,7 @@
     if (buttonIndex == 1) { //YES pressed
         Item *i = [self.items objectAtIndex:selectedIemIndex];
         [[Database sharedDatabase] deleteItemWithId:i.item_id];
-        self.items = [[Database sharedDatabase] getAllAddedItems];
-        [self.tableView reloadData];
+        [self showAllItems];
     }
 }
 

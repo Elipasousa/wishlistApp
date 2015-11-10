@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *filterImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *filterViewHeightConstraint;
 - (IBAction)clearFilterTouched:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *totalItemsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalPriceLabel;
 
 @property (strong, nonatomic) NSArray *items;
 

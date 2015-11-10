@@ -10,15 +10,4 @@
 
 @implementation Item
 
--(id)initWithTitle:(NSString *)title reference:(NSString *)reference tag:(NSString *)tag price:(NSString *)price addedOn:(NSString *)addedOn photo:(NSString *)photo {
-    _title = title;
-    _reference = reference;
-    _tag = tag;
-    _price = price;
-    _addedOn = addedOn;
-    _photo = photo;
-
-    return self;
-}
-
 @end

@@ -166,8 +166,8 @@
 -(NSArray *)rightButtons {
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
     //[rightUtilityButtons sw_addUtilityButtonWithColor:OliveColor title:@"Comprado"];
-    [rightUtilityButtons sw_addUtilityButtonWithColor:GoldColor title:@"Editar"];
-    [rightUtilityButtons sw_addUtilityButtonWithColor:FireBrickColor title:@"Apagar"];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:GoldColor icon:[UIImage imageNamed:@"ic_edit"]];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:FireBrickColor icon:[UIImage imageNamed:@"ic_delete"]];
     
     return rightUtilityButtons;
 }

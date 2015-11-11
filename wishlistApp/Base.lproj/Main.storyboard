@@ -298,7 +298,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxV-BD-yW5" userLabel="camera">
-                                <rect key="frame" x="0.0" y="224" width="300" height="40"/>
+                                <rect key="frame" x="0.0" y="234" width="300" height="40"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_camera" translatesAutoresizingMaskIntoConstraints="NO" id="xf2-W3-iV9">
                                         <rect key="frame" x="138" y="8" width="24" height="24"/>
@@ -325,7 +325,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fw6-ni-unT" userLabel="gallery">
-                                <rect key="frame" x="300" y="224" width="300" height="40"/>
+                                <rect key="frame" x="300" y="234" width="300" height="40"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_gallery" translatesAutoresizingMaskIntoConstraints="NO" id="pAS-Zx-qfe">
                                         <rect key="frame" x="138" y="8" width="24" height="24"/>
@@ -351,7 +351,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUb-eu-KZ4" userLabel="Separator">
-                                <rect key="frame" x="0.0" y="284" width="600" height="1"/>
+                                <rect key="frame" x="0.0" y="294" width="600" height="1"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.50196078430000002" alpha="0.69692887930000003" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -359,24 +359,24 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XVV-Ee-c7q" userLabel="Separator">
-                                <rect key="frame" x="0.0" y="335" width="600" height="1"/>
+                                <rect key="frame" x="0.0" y="345" width="600" height="1"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.50196078430000002" alpha="0.69692887930000003" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="w26-eM-N9E"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inserthere_pink" translatesAutoresizingMaskIntoConstraints="NO" id="uQI-bX-Ttc">
-                                <rect key="frame" x="235" y="84" width="130" height="130"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inserthere_pink1" translatesAutoresizingMaskIntoConstraints="NO" id="uQI-bX-Ttc">
+                                <rect key="frame" x="230" y="84" width="140" height="140"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="AiU-TZ-RRf"/>
-                                    <constraint firstAttribute="width" constant="130" id="lkj-8x-fo9"/>
+                                    <constraint firstAttribute="height" constant="140" id="AiU-TZ-RRf"/>
+                                    <constraint firstAttribute="width" constant="140" id="lkj-8x-fo9"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Referência (opcional)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YzC-P9-Y9A">
-                                <rect key="frame" x="10" y="336" width="535" height="50"/>
+                                <rect key="frame" x="10" y="346" width="535" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4cs-jN-iex"/>
@@ -390,7 +390,7 @@
                                 </variation>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M68-C3-euh" userLabel="Separator">
-                                <rect key="frame" x="0.0" y="386" width="600" height="1"/>
+                                <rect key="frame" x="0.0" y="396" width="600" height="1"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.50196078430000002" alpha="0.69692887930000003" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -398,7 +398,7 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Loja" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uoW-iZ-ksv">
-                                <rect key="frame" x="10" y="387" width="580" height="50"/>
+                                <rect key="frame" x="10" y="397" width="580" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="pYT-q5-K1e"/>
@@ -415,7 +415,7 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPG-En-RVn" userLabel="Separator">
-                                <rect key="frame" x="0.0" y="437" width="600" height="1"/>
+                                <rect key="frame" x="0.0" y="447" width="600" height="1"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.50196078430000002" alpha="0.69692887930000003" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -423,7 +423,7 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Preço" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aw2-nm-KYB">
-                                <rect key="frame" x="10" y="438" width="580" height="50"/>
+                                <rect key="frame" x="10" y="448" width="580" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="l7k-eI-jMf"/>
@@ -440,7 +440,7 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GwQ-wW-op3" userLabel="Separator">
-                                <rect key="frame" x="0.0" y="488" width="600" height="1"/>
+                                <rect key="frame" x="0.0" y="498" width="600" height="1"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.50196078430000002" alpha="0.69692887930000003" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -448,14 +448,14 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrP-pm-rYj">
-                                <rect key="frame" x="10" y="499" width="23" height="12"/>
+                                <rect key="frame" x="10" y="509" width="23" height="12"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="10"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCi-rj-aG6">
-                                <rect key="frame" x="555" y="336" width="45" height="50"/>
+                                <rect key="frame" x="555" y="346" width="45" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="M9s-xa-5EG"/>
@@ -472,7 +472,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Descrição (ex. &quot;Vestido&quot;)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PwD-HX-IeY">
-                                <rect key="frame" x="10" y="285" width="580" height="50"/>
+                                <rect key="frame" x="10" y="295" width="580" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="G62-gm-FuC"/>
@@ -723,6 +723,6 @@
         <image name="ic_clear" width="24" height="24"/>
         <image name="ic_delete_pink" width="24" height="24"/>
         <image name="ic_gallery" width="24" height="24"/>
-        <image name="inserthere_pink" width="100" height="100"/>
+        <image name="inserthere_pink1" width="130" height="130"/>
     </resources>
 </document>

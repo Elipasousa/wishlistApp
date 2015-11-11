@@ -181,12 +181,16 @@
 
 - (IBAction)searchTouched:(id)sender {
     [self resizeSearchView];
+    self.filterViewHeightConstraint.constant = 44.0f;
+    self.filterView.hidden = NO;
     
     NSString *search_by_title = [self.searchTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSString *filter_by_brand = [self.filterTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];    
     
     if ([search_by_title isEqualToString:@""] && [filter_by_brand isEqualToString:@""]) {
         self.items = [[Database sharedDatabase] getAllAddedItems];
+        self.filterViewHeightConstraint.constant = 0.0f;
+        self.filterView.hidden = YES;
     }
     else if (![search_by_title isEqualToString:@""] && ![filter_by_brand isEqualToString:@""]) {
         self.items = [[Database sharedDatabase] getItemsWithTitle:search_by_title andTag:filter_by_brand];
@@ -198,8 +202,7 @@
         self.items = [[Database sharedDatabase] getItemsWithTag:filter_by_brand];
     }
     [self reloadTableView];
-    self.filterViewHeightConstraint.constant = 44.0f;
-    self.filterView.hidden = NO;
+
 }
 
 - (IBAction)clearSearchTouched:(id)sender {

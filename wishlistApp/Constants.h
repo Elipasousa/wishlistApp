@@ -39,10 +39,10 @@
 
 #define AquaBlueColor [UIColor colorWithRed:88.0/255.0 green:164.0/255.0 blue:162.0/255.0 alpha:1.0]
 #define LightCoralColor [UIColor colorWithRed:240.0/255.0 green:128.0/255.0 blue:128.0/255.0 alpha:1.0]
-#define AquaBlueColorWithTransparency [UIColor colorWithRed:88.0/255.0 green:164.0/255.0 blue:162.0/255.0 alpha:0.2]
-#define LightCoralColorWithTransparency [UIColor colorWithRed:240.0/255.0 green:128.0/255.0 blue:128.0/255.0 alpha:0.2]
+#define AquaBlueColorWithTransparency(transparency) [UIColor colorWithRed:88.0/255.0 green:164.0/255.0 blue:162.0/255.0 alpha:transparency]
+#define LightCoralColorWithTransparency(transparency) [UIColor colorWithRed:240.0/255.0 green:128.0/255.0 blue:128.0/255.0 alpha:transparency]
 
 #define AppMainColor LightCoralColor
-#define AppMainColorWithTransparency LightCoralColorWithTransparency
+#define AppMainColorWithTransparency(transparency) LightCoralColorWithTransparency(transparency)
 
 #endif /* Constants_h */

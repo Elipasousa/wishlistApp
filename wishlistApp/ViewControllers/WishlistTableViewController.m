@@ -62,7 +62,7 @@
 #pragma mark - Setup Methods
 
 -(void)setupViews {
-    self.filterView.backgroundColor = AppMainColorWithTransparency;
+    self.filterView.backgroundColor = AppMainColorWithTransparency(0.2);
     [self.tableView setSeparatorColor:AppMainColor];
 }
 
@@ -90,7 +90,7 @@
     UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_search"]
                                                                   style:UIBarButtonItemStylePlain
                                                                  target:self
-                                                                 action:@selector(searchItem)];
+                                                                 action:@selector(resizeSearchView)];
     
     
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:addButton, searchButton, nil]];
@@ -102,27 +102,15 @@
     [self performSegueWithIdentifier:@"addNewItem" sender:self];
 }
 
--(void)searchItem {
-    [ActionSheetStringPicker showPickerWithTitle:@"Escolha a loja"
-                                            rows:BRAND_NAMES
-                                initialSelection:selectedBrandIndex
-                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
-                                           selectedBrandIndex = selectedIndex;
-                                           filterIsActive = YES;
-                                           
-                                           NSString *tag_name = [BRAND_LOGOS objectForKey:selectedValue];
-                                            self.filterImageView.image = [UIImage imageNamed:tag_name];
-                                            self.filterViewHeightConstraint.constant = 44.0f;
-                                            self.filterView.hidden = NO;
-                                           
-                                           self.items = [[Database sharedDatabase] getItemsWithTag:selectedValue];
-                                           [self setTotalAndPriceLabels];
-                                           [self.tableView reloadData];
-                                       }
-                                     cancelBlock:^(ActionSheetStringPicker *picker) {
-                                         NSLog(@"Block Picker Canceled");
-                                     }
-                                          origin:self.view];
+-(void)resizeSearchView {
+    [self.searchTextField resignFirstResponder];
+    [self.filterTextField resignFirstResponder];
+
+    self.searchViewHeightConstraint.constant == 0 ? (self.searchViewHeightConstraint.constant = 200) : (self.searchViewHeightConstraint.constant = 0);
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.view layoutIfNeeded]; // Called on parent view
+    }];
 }
 
 #pragma mark - Table View Methods
@@ -178,6 +166,28 @@
     [self showAllItems];
 }
 
+- (IBAction)searchTouched:(id)sender {
+    [self resizeSearchView];
+    
+    NSString *search_by_title = self.searchTextField.text;
+    NSString *filter_by_brand = self.filterTextField.text;
+    
+    if ([search_by_title isEqualToString:@""] && [filter_by_brand isEqualToString:@""]) {
+        self.items = [[Database sharedDatabase] getAllAddedItems];
+    }
+    else if (![search_by_title isEqualToString:@""] && ![filter_by_brand isEqualToString:@""]) {
+        self.items = [[Database sharedDatabase] getItemsWithTitle:search_by_title andTag:filter_by_brand];
+    }
+    else if (![search_by_title isEqualToString:@""]) {
+        self.items = [[Database sharedDatabase] getItemsWithTitle:search_by_title];
+    }
+    else if (![filter_by_brand isEqualToString:@""]) {
+        self.items = [[Database sharedDatabase] getItemsWithTag:filter_by_brand];
+    }
+    [self setTotalAndPriceLabels];
+    [self.tableView reloadData];
+}
+
 #pragma mark - SWTableViewCell Methods
 
 -(NSArray *)rightButtons {
@@ -226,6 +236,43 @@
         [[Database sharedDatabase] deleteItemWithId:i.item_id];
         [self showAllItems];
     }
+}
+
+#pragma mark - UITextFieldDelegate Methods
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+    if (textField == self.filterTextField) {
+        [ActionSheetStringPicker showPickerWithTitle:@"Escolha a loja"
+                                                rows:BRAND_NAMES
+                                    initialSelection:selectedBrandIndex
+                                           doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                               selectedBrandIndex = selectedIndex;
+                                               filterIsActive = YES;
+                                               
+                                               NSString *brand_name = [BRAND_NAMES objectAtIndex:selectedIndex];
+                                               self.filterTextField.text = brand_name;
+                                               [textField resignFirstResponder];
+                                               
+                                               //self.filterImageView.image = [UIImage imageNamed:tag_name];
+                                               //self.filterViewHeightConstraint.constant = 44.0f;
+                                               //self.filterView.hidden = NO;
+                                               
+
+                                           }
+                                         cancelBlock:^(ActionSheetStringPicker *picker) {
+                                             NSLog(@"Block Picker Canceled");
+                                         }
+                                              origin:self.view];
+    }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    //[self resizeSearchView];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    //[textField resignFirstResponder];
+    return YES;
 }
 
 @end

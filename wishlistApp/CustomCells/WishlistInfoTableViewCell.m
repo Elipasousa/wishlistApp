@@ -41,13 +41,11 @@
         self.tagLabel.text = self.item.tag;
     }
     
-    /*NSData *data = [[NSData alloc]initWithBase64EncodedString:self.item.photo options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    self.photoImageView.image = [UIImage imageWithData:data];*/
-    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSData *data = [[NSData alloc]initWithBase64EncodedString:self.item.photo options:NSDataBase64DecodingIgnoreUnknownCharacters];
+        UIImage *image = [UIImage imageWithData:data];
         dispatch_sync(dispatch_get_main_queue(), ^{
-            self.photoImageView.image = [UIImage imageWithData:data];
+            self.photoImageView.image = image;
         });
     });
 }

@@ -12,8 +12,6 @@
     NSInteger selectedBrandIndex;
     NSInteger selectedIemIndex;
     BOOL filterIsActive;
-    //BOOL willReturnFromDetails;
-    //NSMutableArray *pictures;
 }
 
 @end
@@ -34,7 +32,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    if (!filterIsActive /*&& !willReturnFromDetails*/) {
+    if (!filterIsActive) {
         [self showAllItems];
     }
     //willReturnFromDetails = NO;
@@ -52,25 +50,22 @@
 
 -(void)setTotalAndPriceLabels {
     self.totalItemsLabel.text = [NSString stringWithFormat:@"%ld artigos", (long) [self.items count]];
-    //pictures = [[NSMutableArray alloc] init];
     
     float total_price = 0.0;
     for (Item *i in self.items) {
         NSString *value = [i.price stringByReplacingOccurrencesOfString:@"," withString:@"."];
         total_price += [value floatValue];
-        
-       /* NSData *data = [[NSData alloc]initWithBase64EncodedString:i.photo options:NSDataBase64DecodingIgnoreUnknownCharacters];
-        [pictures addObject:[UIImage imageWithData:data]];*/
     }
     self.totalPriceLabel.text = [NSString stringWithFormat:@"%.02f €", total_price];
 }
 
 -(void)reloadTableView {
+    [self setTotalAndPriceLabels];
+
     if ([self.items count] == 0) {
         self.tableView.hidden = YES;
     } else {
         self.tableView.hidden = NO;
-        [self setTotalAndPriceLabels];
         [self.tableView reloadData];
     }
 }
@@ -108,10 +103,17 @@
                                                                  target:self
                                                                  action:@selector(resizeSearchView)];
     
+    UIBarButtonItem *aboutButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_icon"]
+                                                                     style:UIBarButtonItemStylePlain
+                                                                    target:self
+                                                                    action:@selector(aboutInfo)];
+    
     
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:addButton, searchButton, nil]];
-    //self.navigationItem.rightBarButtonItem = addButton;
+    self.navigationItem.leftBarButtonItem = aboutButton;
+}
 
+-(void)aboutInfo {
 }
 
 -(void)addNewItem {
@@ -155,7 +157,6 @@
         cell = [nib objectAtIndex:0];
     }
     cell.item = [self.items objectAtIndex:indexPath.row];
-    //cell.photoImageView.image = [pictures objectAtIndex:indexPath.row];
     cell.rightUtilityButtons = [self rightButtons];
     cell.delegate = self;
     return cell;

@@ -12,6 +12,8 @@
     NSInteger selectedBrandIndex;
     NSInteger selectedIemIndex;
     BOOL filterIsActive;
+    //BOOL willReturnFromDetails;
+    //NSMutableArray *pictures;
 }
 
 @end
@@ -32,9 +34,10 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    if (!filterIsActive) {
+    if (!filterIsActive /*&& !willReturnFromDetails*/) {
         [self showAllItems];
     }
+    //willReturnFromDetails = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,11 +52,15 @@
 
 -(void)setTotalAndPriceLabels {
     self.totalItemsLabel.text = [NSString stringWithFormat:@"%ld artigos", (long) [self.items count]];
+    //pictures = [[NSMutableArray alloc] init];
     
     float total_price = 0.0;
     for (Item *i in self.items) {
         NSString *value = [i.price stringByReplacingOccurrencesOfString:@"," withString:@"."];
         total_price += [value floatValue];
+        
+       /* NSData *data = [[NSData alloc]initWithBase64EncodedString:i.photo options:NSDataBase64DecodingIgnoreUnknownCharacters];
+        [pictures addObject:[UIImage imageWithData:data]];*/
     }
     self.totalPriceLabel.text = [NSString stringWithFormat:@"%.02f €", total_price];
 }
@@ -148,6 +155,7 @@
         cell = [nib objectAtIndex:0];
     }
     cell.item = [self.items objectAtIndex:indexPath.row];
+    //cell.photoImageView.image = [pictures objectAtIndex:indexPath.row];
     cell.rightUtilityButtons = [self rightButtons];
     cell.delegate = self;
     return cell;
@@ -158,7 +166,8 @@
     ItemDetailsViewController *target =  (ItemDetailsViewController*)[storyboard instantiateViewControllerWithIdentifier:@"ItemDetailsViewController"];
     target.item = [self.items objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:target animated:YES];
-    
+    //willReturnFromDetails = YES;
+
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 

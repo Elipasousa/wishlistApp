@@ -95,7 +95,7 @@
 }
 
 -(NSArray *)getItemsWithReference:(NSString *)item_reference {
-    FMResultSet *s = [self.db executeQuery:[NSString stringWithFormat:@"SELECT * FROM Items WHERE item_reference='%@';", item_reference]];
+    FMResultSet *s = [self.db executeQuery:[NSString stringWithFormat:@"SELECT * FROM Items WHERE item_reference LIKE '%%%@%%';", item_reference]];
     NSMutableArray *items = [[NSMutableArray alloc] init];
     
     while ([s next]) {
@@ -113,7 +113,7 @@
 }
 
 -(NSArray *)getItemsWithTag:(NSString *)item_tag {
-    FMResultSet *s = [self.db executeQuery:[NSString stringWithFormat:@"SELECT * FROM Items WHERE item_tag='%@';", item_tag]];
+    FMResultSet *s = [self.db executeQuery:[NSString stringWithFormat:@"SELECT * FROM Items WHERE item_tag LIKE '%%%@%%';", item_tag]];
     NSMutableArray *items = [[NSMutableArray alloc] init];
     
     while ([s next]) {
@@ -131,7 +131,7 @@
 }
 
 -(NSArray *)getItemsWithTitle:(NSString *)item_title andTag:(NSString *)item_tag {
-    FMResultSet *s = [self.db executeQuery:[NSString stringWithFormat:@"SELECT * FROM Items WHERE item_title='%@' AND item_tag='%@';", item_title, item_tag]];
+    FMResultSet *s = [self.db executeQuery:[NSString stringWithFormat:@"SELECT * FROM Items WHERE item_title LIKE '%%%@%%' AND item_tag LIKE '%%%@%%';", item_title, item_tag]];
     NSMutableArray *items = [[NSMutableArray alloc] init];
     
     while ([s next]) {

@@ -27,13 +27,13 @@
     
     selectedBrandIndex = 0;
     filterIsActive = NO;
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self showAllItems];
     if (!filterIsActive) {
-
+        [self showAllItems];
     }
 }
 
@@ -44,8 +44,7 @@
 
 -(void)showAllItems {
     self.items = [[Database sharedDatabase] getAllAddedItems];
-    [self setTotalAndPriceLabels];
-    [self.tableView reloadData];
+    [self reloadTableView];
 }
 
 -(void)setTotalAndPriceLabels {
@@ -59,10 +58,20 @@
     self.totalPriceLabel.text = [NSString stringWithFormat:@"%.02f €", total_price];
 }
 
+-(void)reloadTableView {
+    if ([self.items count] == 0) {
+        self.tableView.hidden = YES;
+    } else {
+        self.tableView.hidden = NO;
+        [self setTotalAndPriceLabels];
+        [self.tableView reloadData];
+    }
+}
+
 #pragma mark - Setup Methods
 
 -(void)setupViews {
-    self.filterView.backgroundColor = AppMainColorWithTransparency(0.2);
+    self.filterView.backgroundColor = AppMainColorWithTransparency(0.4);
     [self.tableView setSeparatorColor:AppMainColor];
 }
 
@@ -160,7 +169,10 @@
 #pragma mark - Actions
 
 - (IBAction)clearFilterTouched:(id)sender {
+    self.filterTextField.text = @"";
+    self.searchTextField.text = @"";
     selectedBrandIndex = 0;
+    
     filterIsActive = NO;
     self.filterView.hidden = YES;
     self.filterViewHeightConstraint.constant = 0.0f;
@@ -170,8 +182,8 @@
 - (IBAction)searchTouched:(id)sender {
     [self resizeSearchView];
     
-    NSString *search_by_title = self.searchTextField.text;
-    NSString *filter_by_brand = self.filterTextField.text;
+    NSString *search_by_title = [self.searchTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString *filter_by_brand = [self.filterTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];    
     
     if ([search_by_title isEqualToString:@""] && [filter_by_brand isEqualToString:@""]) {
         self.items = [[Database sharedDatabase] getAllAddedItems];
@@ -185,8 +197,9 @@
     else if (![filter_by_brand isEqualToString:@""]) {
         self.items = [[Database sharedDatabase] getItemsWithTag:filter_by_brand];
     }
-    [self setTotalAndPriceLabels];
-    [self.tableView reloadData];
+    [self reloadTableView];
+    self.filterViewHeightConstraint.constant = 44.0f;
+    self.filterView.hidden = NO;
 }
 
 - (IBAction)clearSearchTouched:(id)sender {
@@ -259,12 +272,6 @@
                                                NSString *brand_name = [BRAND_NAMES objectAtIndex:selectedIndex];
                                                self.filterTextField.text = brand_name;
                                                [textField resignFirstResponder];
-                                               
-                                               //self.filterImageView.image = [UIImage imageNamed:tag_name];
-                                               //self.filterViewHeightConstraint.constant = 44.0f;
-                                               //self.filterView.hidden = NO;
-                                               
-
                                            }
                                          cancelBlock:^(ActionSheetStringPicker *picker) {
                                              NSLog(@"Block Picker Canceled");
@@ -274,6 +281,11 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
+    if (textField == self.searchTextField) {
+        if (![self.searchTextField.text isEqualToString:@""]) {
+            filterIsActive = YES;
+        }
+    }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {

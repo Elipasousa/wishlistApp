@@ -62,17 +62,17 @@
 #pragma mark - Setup Methods
 
 -(void)setupViews {
-    self.filterView.backgroundColor = AquaBlueColorWithTransparency;
-    [self.tableView setSeparatorColor:AquaBlueColor];
+    self.filterView.backgroundColor = AppMainColorWithTransparency;
+    [self.tableView setSeparatorColor:AppMainColor];
 }
 
 -(void)setupNavigationBar {
     self.navigationItem.hidesBackButton = YES;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
-    self.navigationController.view.backgroundColor = AquaBlueColor;
+    self.navigationController.view.backgroundColor = AppMainColor;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor = AquaBlueColor;
+    self.navigationController.navigationBar.barTintColor = AppMainColor;
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
     self.navigationController.navigationBar.opaque = YES;
     self.navigationController.navigationBar.translucent = NO;

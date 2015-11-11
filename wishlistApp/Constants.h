@@ -38,7 +38,11 @@
 #define OliveColor [UIColor colorWithRed:128.0/255.0 green:128.0/255.0 blue:0.0/255.0 alpha:1.0]
 
 #define AquaBlueColor [UIColor colorWithRed:88.0/255.0 green:164.0/255.0 blue:162.0/255.0 alpha:1.0]
+#define LightCoralColor [UIColor colorWithRed:240.0/255.0 green:128.0/255.0 blue:128.0/255.0 alpha:1.0]
 #define AquaBlueColorWithTransparency [UIColor colorWithRed:88.0/255.0 green:164.0/255.0 blue:162.0/255.0 alpha:0.2]
+#define LightCoralColorWithTransparency [UIColor colorWithRed:240.0/255.0 green:128.0/255.0 blue:128.0/255.0 alpha:0.2]
 
+#define AppMainColor LightCoralColor
+#define AppMainColorWithTransparency LightCoralColorWithTransparency
 
 #endif /* Constants_h */

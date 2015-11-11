@@ -27,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 @property (weak, nonatomic) IBOutlet UITextField *filterTextField;
 - (IBAction)searchTouched:(id)sender;
+- (IBAction)clearSearchTouched:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *grayTransparentView;
 
 @property (strong, nonatomic) NSArray *items;
 

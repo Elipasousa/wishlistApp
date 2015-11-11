@@ -106,7 +106,8 @@
     [self.searchTextField resignFirstResponder];
     [self.filterTextField resignFirstResponder];
 
-    self.searchViewHeightConstraint.constant == 0 ? (self.searchViewHeightConstraint.constant = 200) : (self.searchViewHeightConstraint.constant = 0);
+    self.searchViewHeightConstraint.constant == 0 ? (self.searchViewHeightConstraint.constant = 260) : (self.searchViewHeightConstraint.constant = 0);
+    self.grayTransparentView.hidden = !self.grayTransparentView.hidden;
     
     [UIView animateWithDuration:0.5 animations:^{
         [self.view layoutIfNeeded]; // Called on parent view
@@ -188,6 +189,12 @@
     [self.tableView reloadData];
 }
 
+- (IBAction)clearSearchTouched:(id)sender {
+    self.filterTextField.text = @"";
+    self.searchTextField.text = @"";
+    selectedBrandIndex = 0;
+}
+
 #pragma mark - SWTableViewCell Methods
 
 -(NSArray *)rightButtons {
@@ -267,11 +274,10 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    //[self resizeSearchView];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    //[textField resignFirstResponder];
+    [textField resignFirstResponder];
     return YES;
 }
 

@@ -34,4 +34,14 @@
 }
 */
 
+- (IBAction)tableSelectedTouched:(id)sender {
+    self.boolTableImageView.image = [UIImage imageNamed:@"ic_selected"];
+    self.boolCollectionImageView.image = [UIImage imageNamed:@"ic_deselected"];
+}
+
+- (IBAction)collectionSelectedTouched:(id)sender {
+    self.boolTableImageView.image = [UIImage imageNamed:@"ic_deselected"];
+    self.boolCollectionImageView.image = [UIImage imageNamed:@"ic_selected"];
+}
+
 @end

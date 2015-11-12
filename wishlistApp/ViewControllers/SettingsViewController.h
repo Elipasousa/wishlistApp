@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingsViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *boolTableImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *boolCollectionImageView;
+- (IBAction)tableSelectedTouched:(id)sender;
+- (IBAction)collectionSelectedTouched:(id)sender;
 
 @end

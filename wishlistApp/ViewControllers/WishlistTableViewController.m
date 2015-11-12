@@ -116,6 +116,7 @@
 }
 
 -(void)settings {
+    [self performSegueWithIdentifier:@"goToSettings" sender:self];
 }
 
 -(void)addNewItem {

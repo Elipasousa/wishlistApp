@@ -25,5 +25,6 @@
 - (IBAction)barcodeReaderTouched:(id)sender;
 
 @property (strong, nonatomic) Item *item;
+@property (nonatomic, copy) void (^willAddNewItemBlock)();
 
 @end

@@ -375,6 +375,15 @@
                                     <constraint firstAttribute="width" constant="140" id="lkj-8x-fo9"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Descrição (ex. &quot;Vestido&quot;)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PwD-HX-IeY">
+                                <rect key="frame" x="10" y="295" width="580" height="50"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="G62-gm-FuC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Referência (opcional)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YzC-P9-Y9A">
                                 <rect key="frame" x="10" y="346" width="535" height="50"/>
                                 <animations/>
@@ -389,14 +398,6 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M68-C3-euh" userLabel="Separator">
-                                <rect key="frame" x="0.0" y="396" width="600" height="1"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.50196078430000002" alpha="0.69692887930000003" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="apO-ii-QUh"/>
-                                </constraints>
-                            </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Loja" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uoW-iZ-ksv">
                                 <rect key="frame" x="10" y="397" width="580" height="50"/>
                                 <animations/>
@@ -414,14 +415,6 @@
                                     <outlet property="delegate" destination="aSe-k3-5ck" id="XaG-r6-NCn"/>
                                 </connections>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPG-En-RVn" userLabel="Separator">
-                                <rect key="frame" x="0.0" y="447" width="600" height="1"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.50196078430000002" alpha="0.69692887930000003" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="vq5-6r-Ztt"/>
-                                </constraints>
-                            </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Preço" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aw2-nm-KYB">
                                 <rect key="frame" x="10" y="448" width="580" height="50"/>
                                 <animations/>
@@ -439,6 +432,22 @@
                                     <outlet property="delegate" destination="aSe-k3-5ck" id="tas-Gi-m8H"/>
                                 </connections>
                             </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M68-C3-euh" userLabel="Separator">
+                                <rect key="frame" x="0.0" y="396" width="600" height="1"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.50196078430000002" alpha="0.69692887930000003" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="apO-ii-QUh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPG-En-RVn" userLabel="Separator">
+                                <rect key="frame" x="0.0" y="447" width="600" height="1"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.50196078430000002" alpha="0.69692887930000003" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="vq5-6r-Ztt"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GwQ-wW-op3" userLabel="Separator">
                                 <rect key="frame" x="0.0" y="498" width="600" height="1"/>
                                 <animations/>
@@ -471,15 +480,6 @@
                                     <action selector="barcodeReaderTouched:" destination="aSe-k3-5ck" eventType="touchUpInside" id="V5Q-xU-dvh"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Descrição (ex. &quot;Vestido&quot;)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PwD-HX-IeY">
-                                <rect key="frame" x="10" y="295" width="580" height="50"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="G62-gm-FuC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

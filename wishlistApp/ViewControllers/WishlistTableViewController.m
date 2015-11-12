@@ -12,6 +12,7 @@
     NSInteger selectedBrandIndex;
     NSInteger selectedIemIndex;
     BOOL filterIsActive;
+    BOOL willReturnFromAddingNewItem;
 }
 
 @end
@@ -27,15 +28,16 @@
     
     selectedBrandIndex = 0;
     filterIsActive = NO;
+    willReturnFromAddingNewItem = YES; //to force update on first launch
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    if (!filterIsActive) {
+    if (!filterIsActive && willReturnFromAddingNewItem) {
         [self showAllItems];
     }
-    //willReturnFromDetails = NO;
+    willReturnFromAddingNewItem = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -130,6 +132,17 @@
     [UIView animateWithDuration:0.5 animations:^{
         [self.view layoutIfNeeded]; // Called on parent view
     }];
+}
+
+#pragma mark - Segues
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"addNewItem"]) {
+        AddItemViewController *target = segue.destinationViewController;
+        target.willAddNewItemBlock = ^() {
+            willReturnFromAddingNewItem = YES;
+        };
+    }
 }
 
 #pragma mark - Table View Methods
@@ -242,6 +255,9 @@
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             AddItemViewController *target =  (AddItemViewController*)[storyboard instantiateViewControllerWithIdentifier:@"AddItemViewController"];
             target.item = [self.items objectAtIndex:indexPath.row];
+            target.willAddNewItemBlock = ^() {
+                willReturnFromAddingNewItem = YES;
+            };
             [self.navigationController pushViewController:target animated:YES];
             break;
         }

@@ -61,7 +61,7 @@
 }
 
 -(void)setupNavigationButton {
-    UIBarButtonItem *customButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+    UIBarButtonItem *customButton = [[UIBarButtonItem alloc] initWithTitle:@"Adicionar"
                                                                      style:UIBarButtonItemStylePlain
                                                                     target:self
                                                                     action:@selector(doneAddingItem)];
@@ -83,6 +83,7 @@
         } else {
             [[Database sharedDatabase] updateItemWithID:self.item.item_id WithTitle:self.titleTextField.text reference:self.referenceTextField.text tag:self.tagTextField.text price:self.priceTextField.text addedOn:self.item.addedOn photo:stringFromPhoto];
         }
+        self.willAddNewItemBlock(); //new content was added/updated and wishlist must be reloaded
         [self.navigationController popViewControllerAnimated:YES];
     } else {
         [self showConfirmDialogWithTitle:@"Atention" andMessage:@"Please insert all information"];

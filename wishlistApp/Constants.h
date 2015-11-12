@@ -9,6 +9,13 @@
 #ifndef Constants_h
 #define Constants_h
 
+//Preferences
+#define PREFERENCES_VIEW_TYPE @"view_type"
+
+//View types
+#define VIEW_TYPE_TABLE @"view_type_table"
+#define VIEW_TYPE_COLLECTION @"view_type_collection"
+
 //Brands
 #define ADIDAS @"Adidas"
 #define ALDO @"Aldo"

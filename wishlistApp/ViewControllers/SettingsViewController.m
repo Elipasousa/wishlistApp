@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setupViews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,22 +24,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)setupViews {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *view_type = [defaults objectForKey:PREFERENCES_VIEW_TYPE];
+    
+    if ([view_type isEqualToString:VIEW_TYPE_COLLECTION]) {
+        self.boolTableImageView.image = [UIImage imageNamed:@"ic_deselected"];
+        self.boolCollectionImageView.image = [UIImage imageNamed:@"ic_selected"];
+    } else {
+        self.boolTableImageView.image = [UIImage imageNamed:@"ic_selected"];
+        self.boolCollectionImageView.image = [UIImage imageNamed:@"ic_deselected"];
+    }
 }
-*/
 
 - (IBAction)tableSelectedTouched:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:VIEW_TYPE_TABLE forKey:PREFERENCES_VIEW_TYPE];
+    [defaults synchronize];
+    
     self.boolTableImageView.image = [UIImage imageNamed:@"ic_selected"];
     self.boolCollectionImageView.image = [UIImage imageNamed:@"ic_deselected"];
 }
 
 - (IBAction)collectionSelectedTouched:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:VIEW_TYPE_COLLECTION forKey:PREFERENCES_VIEW_TYPE];
+    [defaults synchronize];
+
     self.boolTableImageView.image = [UIImage imageNamed:@"ic_deselected"];
     self.boolCollectionImageView.image = [UIImage imageNamed:@"ic_selected"];
 }

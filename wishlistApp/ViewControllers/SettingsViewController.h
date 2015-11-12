@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : BaseViewController
+
 @property (weak, nonatomic) IBOutlet UIImageView *boolTableImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *boolCollectionImageView;
 - (IBAction)tableSelectedTouched:(id)sender;

@@ -64,15 +64,30 @@
 -(void)reloadShowingView {
     [self setTotalAndPriceLabels];
     
-    [self.collectionView reloadData];
-
-    //TODO
-    /*if ([self.items count] == 0) {
-        self.tableView.hidden = YES;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *view_type = [defaults objectForKey:PREFERENCES_VIEW_TYPE];
+    
+    if ([view_type isEqualToString:VIEW_TYPE_COLLECTION]) {
+        if ([self.items count] == 0) {
+            self.tableView.hidden = YES;
+            self.collectionView.hidden = YES;
+        } else {
+            self.tableView.hidden = YES;
+            self.collectionView.hidden = NO;
+            [self.collectionView reloadData];
+        }
     } else {
-        self.tableView.hidden = NO;
-        [self.tableView reloadData];
-    }*/
+        if ([self.items count] == 0) {
+            self.tableView.hidden = YES;
+            self.collectionView.hidden = YES;
+        } else {
+            self.collectionView.hidden = YES;
+            self.tableView.hidden = NO;
+            [self.tableView reloadData];
+        }
+    }
+    
+    [self.collectionView reloadData];
 }
 
 #pragma mark - Setup Methods
@@ -92,9 +107,6 @@
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
     self.navigationController.navigationBar.opaque = YES;
     self.navigationController.navigationBar.translucent = NO;
-    
-    
-    //self.navigationController.navigationBar.tintColor = [UIColor blackColor];
 }
 
 -(void)setupNavigationButton {
@@ -119,6 +131,7 @@
 }
 
 -(void)settings {
+    willReturnFromAddingNewItem = YES;
     [self performSegueWithIdentifier:@"goToSettings" sender:self];
 }
 

@@ -34,7 +34,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="7W4-xd-8ub"/>
                                 </connections>
                             </tableView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sMH-dx-rTq">
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sMH-dx-rTq">
                                 <rect key="frame" x="0.0" y="64" width="600" height="516"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -681,7 +681,7 @@
                                             <action selector="tableSelectedTouched:" destination="Ugy-iL-cPF" eventType="touchUpInside" id="9Tj-mS-ETo"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_selected" translatesAutoresizingMaskIntoConstraints="NO" id="5oz-cT-5qK">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_deselected" translatesAutoresizingMaskIntoConstraints="NO" id="5oz-cT-5qK">
                                         <rect key="frame" x="16" y="13" width="24" height="24"/>
                                         <animations/>
                                     </imageView>
@@ -906,7 +906,6 @@
         <image name="ic_delete_pink" width="24" height="24"/>
         <image name="ic_deselected" width="24" height="24"/>
         <image name="ic_gallery" width="24" height="24"/>
-        <image name="ic_selected" width="24" height="24"/>
         <image name="inserthere_pink1" width="130" height="130"/>
     </resources>
 </document>

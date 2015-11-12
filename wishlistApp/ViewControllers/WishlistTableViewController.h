@@ -14,7 +14,7 @@
 #import "ItemDetailsViewController.h"
 #import <SWTableViewCell/SWTableViewCell.h>
 
-@interface WishlistTableViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, SWTableViewCellDelegate, UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface WishlistTableViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, SWTableViewCellDelegate, UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;

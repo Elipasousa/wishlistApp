@@ -30,6 +30,14 @@
     filterIsActive = NO;
     willReturnFromAddingNewItem = YES; //to force update on first launch
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    
+    // attach long press gesture to collectionView
+    UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+    gesture.minimumPressDuration = 0.3; //seconds
+    gesture.delegate = self;
+    gesture.delaysTouchesBegan = YES;
+    [self.collectionView addGestureRecognizer:gesture];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -302,22 +310,11 @@
     
     switch (index) {
         case 0: { //Editar
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            AddItemViewController *target =  (AddItemViewController*)[storyboard instantiateViewControllerWithIdentifier:@"AddItemViewController"];
-            target.item = [self.items objectAtIndex:indexPath.row];
-            target.willAddNewItemBlock = ^() {
-                willReturnFromAddingNewItem = YES;
-            };
-            [self.navigationController pushViewController:target animated:YES];
+            [self editSelectedCell];
             break;
         }
         case 1: { //Aagar
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Atenção"
-                                                            message:@"Tem a certeza que pretende eliminar este artigo?"
-                                                           delegate:self
-                                                  cancelButtonTitle:@"Cancelar"
-                                                  otherButtonTitles:@"Sim",nil];
-            [alert show];
+            [self deleteSelectedCell];
             break;
         }
     }
@@ -326,6 +323,28 @@
 -(BOOL)swipeableTableViewCellShouldHideUtilityButtonsOnSwipe:(SWTableViewCell *)cell {
     return YES;
 }
+
+#pragma mark - Edit and Delete Methods
+
+-(void)editSelectedCell {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    AddItemViewController *target =  (AddItemViewController*)[storyboard instantiateViewControllerWithIdentifier:@"AddItemViewController"];
+    target.item = [self.items objectAtIndex:selectedIemIndex];
+    target.willAddNewItemBlock = ^() {
+        willReturnFromAddingNewItem = YES;
+    };
+    [self.navigationController pushViewController:target animated:YES];
+}
+
+-(void)deleteSelectedCell {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Atenção"
+                                                    message:@"Tem a certeza que pretende eliminar este artigo?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancelar"
+                                          otherButtonTitles:@"Sim",nil];
+    [alert show];
+}
+
 
 #pragma mark - Alert View
 
@@ -370,6 +389,45 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
+}
+
+#pragma mark - UIGestureRecognizerDelegate Methods
+
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
+    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
+        return;
+    }
+    CGPoint p = [gestureRecognizer locationInView:self.collectionView];
+    
+    NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:p];
+    selectedIemIndex = indexPath.row;
+
+    if (indexPath == nil){
+        NSLog(@"couldn't find index path");
+    } else {
+        UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Escolha uma opção", nil)]
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Cancelar"
+                                             destructiveButtonTitle:@"Apagar"
+                                                  otherButtonTitles:@"Editar", nil];
+        
+        [popup showInView:[UIApplication sharedApplication].keyWindow];
+    }
+}
+
+#pragma mark - UIActionSheetDelegate Methods
+
+-(void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0: { //Apagar
+            [self deleteSelectedCell];
+            break;
+        }
+        case 1: { //Editar
+            [self editSelectedCell];
+            break;
+        }
+    }
 }
 
 @end

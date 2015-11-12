@@ -105,17 +105,17 @@
                                                                  target:self
                                                                  action:@selector(resizeSearchView)];
     
-    UIBarButtonItem *aboutButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_icon"]
+    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_settings"]
                                                                      style:UIBarButtonItemStylePlain
                                                                     target:self
-                                                                    action:@selector(aboutInfo)];
+                                                                    action:@selector(settings)];
     
     
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:addButton, searchButton, nil]];
-    self.navigationItem.leftBarButtonItem = aboutButton;
+    self.navigationItem.leftBarButtonItem = settingsButton;
 }
 
--(void)aboutInfo {
+-(void)settings {
 }
 
 -(void)addNewItem {
@@ -186,7 +186,7 @@
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return  110;
+    return  120;
 }
 
 #pragma mark - Actions

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WishlistInfoCollectionViewCell" id="N9o-J1-DkR" customClass="WishlistInfoCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="180" height="250"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="180" height="250"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OSg-6u-iLC">
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
+                        <animations/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lu6-Ij-Pv1">
+                        <rect key="frame" x="0.0" y="202" width="180" height="17"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18O-9v-9if">
+                        <rect key="frame" x="0.0" y="221" width="180" height="14"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTT-fm-ofJ">
+                        <rect key="frame" x="2" y="233" width="36" height="17"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ced-BT-HKe">
+                        <rect key="frame" x="143" y="233" width="35" height="17"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dSz-Dx-uHD">
+                        <rect key="frame" x="2" y="235" width="65" height="13"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="ANY-1O-MX9"/>
+                            <constraint firstAttribute="width" constant="65" id="Ms4-ag-bWy"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <animations/>
+            <constraints>
+                <constraint firstItem="18O-9v-9if" firstAttribute="leading" secondItem="Lu6-Ij-Pv1" secondAttribute="leading" id="3Vt-oA-gxB"/>
+                <constraint firstAttribute="bottom" secondItem="OSg-6u-iLC" secondAttribute="bottom" constant="50" id="6PH-OQ-ATL"/>
+                <constraint firstItem="dSz-Dx-uHD" firstAttribute="top" secondItem="18O-9v-9if" secondAttribute="bottom" constant="8" id="6mx-lZ-YuU"/>
+                <constraint firstItem="PTT-fm-ofJ" firstAttribute="leading" secondItem="N9o-J1-DkR" secondAttribute="leading" constant="8" id="7pY-wi-TqX"/>
+                <constraint firstAttribute="bottom" secondItem="dSz-Dx-uHD" secondAttribute="bottom" constant="2" id="82K-qE-8Hc"/>
+                <constraint firstAttribute="bottom" secondItem="dSz-Dx-uHD" secondAttribute="bottom" constant="2" id="8BF-QZ-8ZN"/>
+                <constraint firstAttribute="bottom" secondItem="PTT-fm-ofJ" secondAttribute="bottom" id="Bv6-8H-Tm2"/>
+                <constraint firstItem="18O-9v-9if" firstAttribute="top" secondItem="Lu6-Ij-Pv1" secondAttribute="bottom" constant="2" id="DHo-5O-qHV"/>
+                <constraint firstItem="dSz-Dx-uHD" firstAttribute="top" secondItem="18O-9v-9if" secondAttribute="bottom" constant="1" id="Gsw-yU-7Vu"/>
+                <constraint firstItem="PTT-fm-ofJ" firstAttribute="leading" secondItem="OSg-6u-iLC" secondAttribute="leading" constant="2" id="JE9-Hb-9uN"/>
+                <constraint firstItem="Lu6-Ij-Pv1" firstAttribute="trailing" secondItem="OSg-6u-iLC" secondAttribute="trailing" id="Jdz-Rb-97P"/>
+                <constraint firstItem="PTT-fm-ofJ" firstAttribute="top" secondItem="18O-9v-9if" secondAttribute="bottom" constant="8" id="NO6-GJ-fTG"/>
+                <constraint firstItem="Lu6-Ij-Pv1" firstAttribute="leading" secondItem="OSg-6u-iLC" secondAttribute="leading" id="Sjq-YW-R8z"/>
+                <constraint firstItem="18O-9v-9if" firstAttribute="trailing" secondItem="Lu6-Ij-Pv1" secondAttribute="trailing" id="TP8-8e-HEy"/>
+                <constraint firstItem="Ced-BT-HKe" firstAttribute="trailing" secondItem="OSg-6u-iLC" secondAttribute="trailing" constant="-2" id="XnT-OX-Qns"/>
+                <constraint firstItem="OSg-6u-iLC" firstAttribute="top" secondItem="N9o-J1-DkR" secondAttribute="top" id="ZGM-KD-jxd"/>
+                <constraint firstItem="Ced-BT-HKe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PTT-fm-ofJ" secondAttribute="trailing" constant="5" id="aNz-Gb-jFi"/>
+                <constraint firstItem="Ced-BT-HKe" firstAttribute="centerY" secondItem="PTT-fm-ofJ" secondAttribute="centerY" id="gEK-9j-3Fz"/>
+                <constraint firstAttribute="bottom" secondItem="PTT-fm-ofJ" secondAttribute="bottom" constant="2" id="iKh-UA-QqP"/>
+                <constraint firstItem="dSz-Dx-uHD" firstAttribute="leading" secondItem="OSg-6u-iLC" secondAttribute="leading" constant="2" id="mHy-Cu-2dC"/>
+                <constraint firstItem="OSg-6u-iLC" firstAttribute="leading" secondItem="N9o-J1-DkR" secondAttribute="leading" id="piy-z4-cNk"/>
+                <constraint firstAttribute="trailing" secondItem="OSg-6u-iLC" secondAttribute="trailing" id="uTt-Dd-fZE"/>
+                <constraint firstItem="Lu6-Ij-Pv1" firstAttribute="top" secondItem="OSg-6u-iLC" secondAttribute="bottom" constant="2" id="xbP-P7-jWE"/>
+            </constraints>
+            <size key="customSize" width="171" height="206"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="7pY-wi-TqX"/>
+                    <exclude reference="NO6-GJ-fTG"/>
+                    <exclude reference="iKh-UA-QqP"/>
+                    <exclude reference="6mx-lZ-YuU"/>
+                    <exclude reference="8BF-QZ-8ZN"/>
+                    <exclude reference="Gsw-yU-7Vu"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="photoImageView" destination="OSg-6u-iLC" id="vEE-hh-Ceh"/>
+                <outlet property="priceLabel" destination="Ced-BT-HKe" id="kdd-fF-7jM"/>
+                <outlet property="referenceLabel" destination="18O-9v-9if" id="phH-QD-Z7S"/>
+                <outlet property="tagImageView" destination="dSz-Dx-uHD" id="MPH-ya-Yue"/>
+                <outlet property="tagLabel" destination="PTT-fm-ofJ" id="ZKR-4v-Oqm"/>
+                <outlet property="titleLabel" destination="Lu6-Ij-Pv1" id="51t-Ho-YAu"/>
+            </connections>
+            <point key="canvasLocation" x="505" y="289"/>
+        </collectionViewCell>
+    </objects>
+</document>

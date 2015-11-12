@@ -25,7 +25,7 @@
                                 <color key="textColor" red="0.94117647059999998" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vBn-El-fvL">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vBn-El-fvL">
                                 <rect key="frame" x="0.0" y="64" width="600" height="516"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,6 +34,34 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="7W4-xd-8ub"/>
                                 </connections>
                             </tableView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sMH-dx-rTq">
+                                <rect key="frame" x="0.0" y="64" width="600" height="516"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="10" id="9KM-AB-33B">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="0AT-kP-Zu2">
+                                        <rect key="frame" x="10" y="10" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="gl1-pn-Ecj"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="lKx-D9-hc5"/>
+                                </connections>
+                            </collectionView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGB-PR-631" userLabel="Current Filter View">
                                 <rect key="frame" x="0.0" y="64" width="600" height="0.0"/>
                                 <subviews>
@@ -236,10 +264,15 @@
                             <constraint firstItem="vBn-El-fvL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2Mv-1Y-i0S"/>
                             <constraint firstItem="vBn-El-fvL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6QU-dz-aVR"/>
                             <constraint firstItem="mwo-wN-6uc" firstAttribute="top" secondItem="vBn-El-fvL" secondAttribute="bottom" id="86f-4M-Ieb"/>
+                            <constraint firstItem="sMH-dx-rTq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8ly-Ns-cJb"/>
                             <constraint firstItem="ZRx-1Z-5nD" firstAttribute="top" secondItem="i1U-5i-VyX" secondAttribute="bottom" id="AfA-VY-9ty"/>
+                            <constraint firstItem="mwo-wN-6uc" firstAttribute="top" secondItem="sMH-dx-rTq" secondAttribute="bottom" id="Bjh-qJ-wpu"/>
                             <constraint firstAttribute="trailing" secondItem="mwo-wN-6uc" secondAttribute="trailing" id="CVS-86-P0b"/>
                             <constraint firstAttribute="trailing" secondItem="i1U-5i-VyX" secondAttribute="trailing" id="ImU-Mw-Mzq"/>
                             <constraint firstItem="vBn-El-fvL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Iqa-GI-3ML"/>
+                            <constraint firstItem="sMH-dx-rTq" firstAttribute="top" secondItem="OGB-PR-631" secondAttribute="bottom" id="PTX-Jg-Cm1"/>
+                            <constraint firstAttribute="trailing" secondItem="sMH-dx-rTq" secondAttribute="trailing" id="PfJ-Jt-Rj0"/>
+                            <constraint firstItem="sMH-dx-rTq" firstAttribute="top" secondItem="i1U-5i-VyX" secondAttribute="bottom" id="QV6-4w-qUM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vBn-El-fvL" secondAttribute="bottom" id="R2B-Z4-fMw"/>
                             <constraint firstItem="mwo-wN-6uc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RBJ-Lg-GS7"/>
                             <constraint firstAttribute="bottom" secondItem="ZRx-1Z-5nD" secondAttribute="bottom" id="TfD-eV-qdc"/>
@@ -262,12 +295,14 @@
                                 <exclude reference="eZy-SH-XDq"/>
                                 <exclude reference="2Mv-1Y-i0S"/>
                                 <exclude reference="Iqa-GI-3ML"/>
+                                <exclude reference="QV6-4w-qUM"/>
                                 <exclude reference="R2B-Z4-fMw"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="SBx-8u-AIh"/>
                     <connections>
+                        <outlet property="collectionView" destination="sMH-dx-rTq" id="n1t-9n-UD1"/>
                         <outlet property="filterTextField" destination="u14-ef-wlj" id="yOY-jf-Iin"/>
                         <outlet property="filterView" destination="OGB-PR-631" id="xPQ-t9-zXC"/>
                         <outlet property="filterViewHeightConstraint" destination="Oxh-v8-mtO" id="MJS-Us-oz3"/>

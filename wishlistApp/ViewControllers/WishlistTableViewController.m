@@ -47,7 +47,7 @@
 
 -(void)showAllItems {
     self.items = [[Database sharedDatabase] getAllAddedItems];
-    [self reloadTableView];
+    [self reloadShowingView];
 }
 
 -(void)setTotalAndPriceLabels {
@@ -61,15 +61,18 @@
     self.totalPriceLabel.text = [NSString stringWithFormat:@"%.02f €", total_price];
 }
 
--(void)reloadTableView {
+-(void)reloadShowingView {
     [self setTotalAndPriceLabels];
+    
+    [self.collectionView reloadData];
 
-    if ([self.items count] == 0) {
+    //TODO
+    /*if ([self.items count] == 0) {
         self.tableView.hidden = YES;
     } else {
         self.tableView.hidden = NO;
         [self.tableView reloadData];
-    }
+    }*/
 }
 
 #pragma mark - Setup Methods
@@ -149,8 +152,10 @@
 #pragma mark - Table View Methods
 
 -(void)registerNibs {
-    UINib *nib1 = [UINib nibWithNibName:@"WishlistInfoTableViewCell" bundle:nil];
-    [self.tableView registerNib:nib1 forCellReuseIdentifier:@"WishlistInfoTableViewCell"];
+    UINib *nibTableView = [UINib nibWithNibName:@"WishlistInfoTableViewCell" bundle:nil];
+    [self.tableView registerNib:nibTableView forCellReuseIdentifier:@"WishlistInfoTableViewCell"];
+    UINib *nibCollectionView = [UINib nibWithNibName:@"WishlistInfoCollectionViewCell" bundle:nil];
+    [self.collectionView registerNib:nibCollectionView forCellWithReuseIdentifier:@"WishlistInfoCollectionViewCell"];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -181,13 +186,44 @@
     ItemDetailsViewController *target =  (ItemDetailsViewController*)[storyboard instantiateViewControllerWithIdentifier:@"ItemDetailsViewController"];
     target.item = [self.items objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:target animated:YES];
-    //willReturnFromDetails = YES;
-
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return  120;
+}
+
+#pragma mark - Collection View Methods
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [self.items count];
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString * CellIdentifier0 = @"WishlistInfoCollectionViewCell";
+    
+    WishlistInfoCollectionViewCell * cell = (WishlistInfoCollectionViewCell *) [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier0 forIndexPath:indexPath];
+    
+    if (cell == nil) {
+        NSArray * nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier0 owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    cell.item = [self.items objectAtIndex:indexPath.row];
+    return  cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat size = ((screenRect.size.width-30)/2);
+    return CGSizeMake(size, size*1.55);
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ItemDetailsViewController *target =  (ItemDetailsViewController*)[storyboard instantiateViewControllerWithIdentifier:@"ItemDetailsViewController"];
+    target.item = [self.items objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:target animated:YES];
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - Actions
@@ -225,7 +261,7 @@
     else if (![filter_by_brand isEqualToString:@""]) {
         self.items = [[Database sharedDatabase] getItemsWithTag:filter_by_brand];
     }
-    [self reloadTableView];
+    [self reloadShowingView];
 
 }
 

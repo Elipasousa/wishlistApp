@@ -23,6 +23,8 @@
 		C2E423B81BF206CF00DE2D8C /* ItemDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E423B71BF206CF00DE2D8C /* ItemDetailsViewController.m */; };
 		C2E423BE1BF2540A00DE2D8C /* BarCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E423BD1BF2540A00DE2D8C /* BarCodeReaderViewController.m */; };
 		C2E423C41BF4E7A000DE2D8C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E423C31BF4E7A000DE2D8C /* SettingsViewController.m */; };
+		C2E423C61BF4EA8300DE2D8C /* WishlistInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E423C51BF4EA8300DE2D8C /* WishlistInfoCollectionViewCell.xib */; };
+		C2E423CC1BF4ECDC00DE2D8C /* WishlistInfoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E423CB1BF4ECDC00DE2D8C /* WishlistInfoCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,9 @@
 		C2E423BD1BF2540A00DE2D8C /* BarCodeReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarCodeReaderViewController.m; sourceTree = "<group>"; };
 		C2E423C21BF4E7A000DE2D8C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		C2E423C31BF4E7A000DE2D8C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		C2E423C51BF4EA8300DE2D8C /* WishlistInfoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WishlistInfoCollectionViewCell.xib; sourceTree = "<group>"; };
+		C2E423CA1BF4ECDC00DE2D8C /* WishlistInfoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishlistInfoCollectionViewCell.h; sourceTree = "<group>"; };
+		C2E423CB1BF4ECDC00DE2D8C /* WishlistInfoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishlistInfoCollectionViewCell.m; sourceTree = "<group>"; };
 		D2AB2443AFF816E38A404AC3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D7799A021BF14D8600456EC1 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				C2E423A31BF0B6F200DE2D8C /* WishlistInfoTableViewCell.xib */,
+				C2E423C51BF4EA8300DE2D8C /* WishlistInfoCollectionViewCell.xib */,
 			);
 			path = CustomCellsNibs;
 			sourceTree = "<group>";
@@ -166,6 +172,8 @@
 			children = (
 				C2E423A51BF0B6FD00DE2D8C /* WishlistInfoTableViewCell.h */,
 				C2E423A61BF0B6FD00DE2D8C /* WishlistInfoTableViewCell.m */,
+				C2E423CA1BF4ECDC00DE2D8C /* WishlistInfoCollectionViewCell.h */,
+				C2E423CB1BF4ECDC00DE2D8C /* WishlistInfoCollectionViewCell.m */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -248,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2E423C61BF4EA8300DE2D8C /* WishlistInfoCollectionViewCell.xib in Resources */,
 				C2E423A41BF0B6F200DE2D8C /* WishlistInfoTableViewCell.xib in Resources */,
 				C2E423961BF0B3F600DE2D8C /* LaunchScreen.storyboard in Resources */,
 				C2E423931BF0B3F600DE2D8C /* Assets.xcassets in Resources */,
@@ -305,6 +314,7 @@
 				C2E4238B1BF0B3F600DE2D8C /* AppDelegate.m in Sources */,
 				C2E423C41BF4E7A000DE2D8C /* SettingsViewController.m in Sources */,
 				C2E423B21BF0C3AE00DE2D8C /* Item.m in Sources */,
+				C2E423CC1BF4ECDC00DE2D8C /* WishlistInfoCollectionViewCell.m in Sources */,
 				C2E423881BF0B3F600DE2D8C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

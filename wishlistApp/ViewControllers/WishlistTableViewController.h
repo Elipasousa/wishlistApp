@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "WishlistInfoTableViewCell.h"
+#import "WishlistInfoCollectionViewCell.h"
 #import "BaseViewController.h"
 #import "AddItemViewController.h"
 #import "ItemDetailsViewController.h"
 #import <SWTableViewCell/SWTableViewCell.h>
 
-@interface WishlistTableViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, SWTableViewCellDelegate, UITextFieldDelegate>
+@interface WishlistTableViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, SWTableViewCellDelegate, UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIView *filterView;
 @property (weak, nonatomic) IBOutlet UIImageView *filterImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *filterViewHeightConstraint;

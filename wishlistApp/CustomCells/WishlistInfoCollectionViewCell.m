@@ -1,23 +1,17 @@
 //
-//  WishlistInfoTableViewCell.m
+//  WishlistInfoCollectionViewCell.m
 //  wishlistApp
 //
-//  Created by Elisabete Sousa on 09/11/15.
+//  Created by Elisabete Sousa on 12/11/15.
 //  Copyright © 2015 Elisabete Bicho. All rights reserved.
 //
 
-#import "WishlistInfoTableViewCell.h"
+#import "WishlistInfoCollectionViewCell.h"
 
-@implementation WishlistInfoTableViewCell
+@implementation WishlistInfoCollectionViewCell
 
 - (void)awakeFromNib {
     // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 -(void)setItem:(Item *)item {
@@ -30,7 +24,7 @@
     self.referenceLabel.text = self.item.reference;
     self.priceLabel.text = self.item.price;
     self.photoImageView.image = nil;
-
+    
     NSString *tag_name = [BRAND_LOGOS objectForKey:self.item.tag];
     if (tag_name != nil) {
         self.tagLabel.hidden = YES;

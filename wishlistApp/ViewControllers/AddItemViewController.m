@@ -86,7 +86,7 @@
         self.willAddNewItemBlock(); //new content was added/updated and wishlist must be reloaded
         [self.navigationController popViewControllerAnimated:YES];
     } else {
-        [self showConfirmDialogWithTitle:@"Atention" andMessage:@"Please insert all information"];
+        [self showConfirmDialogWithTitle:@"Atenção" andMessage:@"Por favor insira os dados necessários."];
     }
 }
 
@@ -145,6 +145,7 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
     if (textField == self.tagTextField) {
+        //[textField resignFirstResponder]; //iOS 9 only
         [ActionSheetStringPicker showPickerWithTitle:@"Select a brand"
                                                 rows:BRAND_NAMES
                                     initialSelection:selectedBrandIndex
@@ -154,7 +155,6 @@
                                                [textField resignFirstResponder];
                                            }
                                          cancelBlock:^(ActionSheetStringPicker *picker) {
-                                             NSLog(@"Block Picker Canceled");
                                              //[textField resignFirstResponder];
                                          }
                                               origin:self.view];

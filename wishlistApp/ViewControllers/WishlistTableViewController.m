@@ -360,6 +360,7 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
     if (textField == self.filterTextField) {
+        //[textField resignFirstResponder]; //iOS 9 only
         [ActionSheetStringPicker showPickerWithTitle:@"Escolha a loja"
                                                 rows:BRAND_NAMES
                                     initialSelection:selectedBrandIndex
@@ -372,7 +373,6 @@
                                                [textField resignFirstResponder];
                                            }
                                          cancelBlock:^(ActionSheetStringPicker *picker) {
-                                             NSLog(@"Block Picker Canceled");
                                          }
                                               origin:self.view];
     }

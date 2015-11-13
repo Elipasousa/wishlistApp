@@ -45,7 +45,7 @@
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="0AT-kP-Zu2">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WishlistInfoCollectionViewCell" id="0AT-kP-Zu2">
                                         <rect key="frame" x="10" y="10" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -293,9 +293,9 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="eZy-SH-XDq"/>
+                                <exclude reference="QV6-4w-qUM"/>
                                 <exclude reference="2Mv-1Y-i0S"/>
                                 <exclude reference="Iqa-GI-3ML"/>
-                                <exclude reference="QV6-4w-qUM"/>
                                 <exclude reference="R2B-Z4-fMw"/>
                             </mask>
                         </variation>

@@ -71,7 +71,8 @@
 
 -(void)doneAddingItem {
     if ([self validaFields]) {
-        NSString *stringFromPhoto = [UIImagePNGRepresentation(self.photoImageView.image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        NSString *stringFromPhoto = [UIImageJPEGRepresentation(self.photoImageView.image, 0.7) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        //NSString *stringFromPhoto = [UIImagePNGRepresentation(self.photoImageView.image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
         
         if (self.item == nil) {
             NSDate *currentDate = [NSDate date];

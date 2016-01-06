@@ -146,7 +146,7 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
     if (textField == self.tagTextField) {
-        //[textField resignFirstResponder]; //iOS 9 only
+        [textField resignFirstResponder]; //iOS 9 only
         [ActionSheetStringPicker showPickerWithTitle:@"Select a brand"
                                                 rows:BRAND_NAMES
                                     initialSelection:selectedBrandIndex
